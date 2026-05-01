@@ -7,10 +7,14 @@
 body {       
     font-family: 'Cairo', sans-serif;
     direction: rtl;
+    
+
 }
 header{
     background-color: #f2fafa;
+    padding: 15px;
 }
+
 .nav {
     background-color: #ffffff;
     border-bottom: 1px solid #e1e8ed;
@@ -18,13 +22,12 @@ header{
     display: flex;
     align-items: center;
     padding: 8px 16px;
-    position: absolute;
-    top: 15px;
     border-radius: 15px;
-    width: 90%;
-    margin: auto;
+    width: 100%;
     justify-content: space-between;
-    position: relative;
+    position: sticky;
+    top: 15px;         
+    z-index: 1000;  
 }
 .brand-name {
     font-size: 25px;
@@ -133,10 +136,25 @@ header{
     .auth-buttons{
         margin: auto;
     }
+        .col-md-6{
+        margin-bottom: 5px;
+        
+    }
+    .box{
+        margin-bottom: 5px;
+    }
+    .input-box{
+        padding: 20px 80px;
+        text-align: center;
+        margin: 50px 0;
+    }
+    
 }
+
+
 @media screen and (max-width: 768px) {
     .header {
-        padding: 0 15px;
+        padding:  15px;
     }
     .brand-name {
         font-size: 20px;
@@ -150,10 +168,23 @@ header{
         padding: 0 15px;
         height: 36px;
     }
+    .group1, .group2{
+        gap: 5px;
+    }
+    .boxes {
+        gap: 5px;
+    }
+    .input-box{
+        padding: 20px 50px;
+        text-align: center;
+        margin: 30px 0;
+    }
+    
 }
 section{
     align-items: center;
     background-color: #f2fafa;
+    width: 100%;
 }
 .image{
     background-image: url('../images/e30c7f59cde8041674ba0d998aecef774a98d15b.png');
@@ -266,10 +297,9 @@ section{
     text-align: center;
 }
 .group1, .group2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
+    margin: auto;
+    text-align: center;
+    
     margin-bottom: 24px;
 }
 .img1{
@@ -278,7 +308,7 @@ section{
     background-repeat: no-repeat;
     background-position: center;
     height: 256px;
-    width: 282px;
+    /* width: 282px; */
     position: relative;
     border-radius: 16px;
     overflow: hidden;
@@ -305,7 +335,7 @@ section{
     background-repeat: no-repeat;
     background-position: center;
     height: 256px;
-    width: 282px;
+    
     position: relative;
     border-radius: 16px;
     overflow: hidden;
@@ -316,7 +346,7 @@ section{
     background-repeat: no-repeat;
     background-position: center;
     height: 256px;
-    width: 282px;
+    
     position: relative;
     border-radius: 16px;
     overflow: hidden;
@@ -327,7 +357,7 @@ section{
     background-repeat: no-repeat;
     background-position: center;
     height: 256px;
-    width: 282px;
+    
     position: relative;
     border-radius: 16px;
     overflow: hidden;
@@ -338,7 +368,6 @@ section{
     background-repeat: no-repeat;
     background-position: center;
     height: 256px;
-    width: 282px;
     position: relative;
     border-radius: 16px;
     overflow: hidden;
@@ -349,7 +378,6 @@ section{
     background-repeat: no-repeat;
     background-position: center;
     height: 256px;
-    width: 282px;
     position: relative;
     border-radius: 16px;
     overflow: hidden;
@@ -360,7 +388,6 @@ section{
     background-repeat: no-repeat;
     background-position: center;
     height: 256px;
-    width: 282px;
     position: relative;
     border-radius: 16px;
     overflow: hidden;
@@ -371,7 +398,6 @@ section{
     background-repeat: no-repeat;
     background-position: center;
     height: 256px;
-    width: 282px;
     position: relative;
     border-radius: 16px;
     overflow: hidden;
@@ -387,9 +413,9 @@ section{
 }
 
 .boxes {
-    display: flex;
-    gap: 24px;
-    margin-bottom: 20px;
+    margin: auto;
+    text-align: center;
+    
 }
 
 .box {
@@ -398,7 +424,7 @@ section{
     border: 1px solid #CBCBCB;
     display: flex;
     flex-direction: column;
-    flex: 1;
+    
 }
 
 .box > img {
@@ -412,7 +438,7 @@ section{
     padding: 16px 12px;
     display: flex;
     flex-direction: column;
-    flex: 1;
+    height: 180px;
 }
 
 .text h4 {
@@ -482,15 +508,11 @@ section{
 }
 #inp{
     height: 50px;
-    width: 500px;
+    width: 50%;
     background-color: #E1DAFF;
     border-radius: 12px;
     gap: 10px;
     margin: auto;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
 }
 #inp::placeholder{
     font-size: 14px;
@@ -564,7 +586,7 @@ section{
     
 }
 footer h6{
-     color: #61605D;
+    color: #61605D;
     font-size: 16px;
     font-weight: 600;
     line-height: 29px;
