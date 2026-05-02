@@ -103,6 +103,22 @@ header{
     left: 15px;
     position: absolute;
 }
+.lang-switcher {
+    background: transparent;
+    border: 1.5px solid #ffffff;
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 4px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+    transition: background 0.2s;
+
+}
+.lang-switcher:hover {
+    background: rgba(255,255,255,0.15);
+}
+
 @media screen and (max-width: 1024px) {
     .nav-links {
         display: none;
@@ -569,7 +585,7 @@ section{
     height: 20px;
     width: 20px;
 }
-.foot-web ul{
+.foot-web .list-header{
     color: #4924DF;
     gap: 15px;
     font-size: 20px;
@@ -584,11 +600,9 @@ section{
     line-height: 29px;
     text-align: right;
     margin-top: 8px;
+    list-style: none;
 }
-.foot-web ul li img{
-    margin-right: 50px;
-    
-}
+
 footer h6{
     color: #61605D;
     font-size: 16px;
