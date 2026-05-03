@@ -6,7 +6,7 @@
 }
 body {       
     font-family: 'Cairo', sans-serif;
-    direction: rtl;
+    /* direction: rtl; */
     
 
 }
@@ -105,18 +105,18 @@ header{
 }
 .lang-switcher {
     background: transparent;
-    border: 1.5px solid #ffffff;
-    color: #ffffff;
+    border: none;
+    color: #4924DF;
     border-radius: 6px;
     padding: 4px 12px;
     cursor: pointer;
     font-size: 14px;
-    margin-right: 10px;
-    transition: background 0.2s;
-
+    margin-right: 15px;
+    transition: all 0.2s;
+    outline: none;
 }
 .lang-switcher:hover {
-    background: rgba(255,255,255,0.15);
+    background: #493cad3a;
 }
 
 @media screen and (max-width: 1024px) {
@@ -610,4 +610,18 @@ footer h6{
     line-height: 29px;
     text-align: center;
     margin-bottom: 20px;
+}
+/* مثال لتعديل الهوامش تلقائياً */
+.sidebar {
+    margin-right: 20px;
+}
+
+[dir="rtl"] .sidebar {
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+/* أو الأفضل استخدام الخاصية الحديثة Logical Properties */
+.sidebar {
+    margin-inline-end: 20px; /* تعمل تلقائياً مع الاتجاهين */
 }
