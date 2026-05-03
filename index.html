@@ -12,9 +12,9 @@
 <body>
 
     <!-- start header main in website -->
-    <header class="header ">
+    <header class="header">
         <div class="container">
-
+            <a href="#" class="lang-switcher" id="lang-switcher">EN</a>
             <nav class="nav">
                 <button class="hamburger" id="hamburger">&#9776;</button>
                 <div class="brand-name">Team Work</div>
@@ -25,7 +25,8 @@
                     <li><a href="#" class="nav-link" data-i18n="nav_services">الخدمات</a></li>
                     <li><a href="#" class="nav-link" data-i18n="nav_contact">تواصل معنا</a></li>
                     <div class="auth-buttons">
-                        <button class="lang-switcher" id="lang-switcher">EN</button>
+                        
+                        
                         <a href="#" class="btn btn-login" style="color: #ffffff;" data-i18n="nav_login">تسجيل دخول</a>
                         <a href="#" class="btn btn-register" data-i18n="nav_register">تسجيل</a>
                     </div>
@@ -36,8 +37,7 @@
     <!-- end header main in website -->
 
     <!-- start section one in website -->
-
-    <section class="p-2">
+    <section class="hero p-2">
         <div class="container">
             <div class="row">
             <div class="col-lg-6 col-md-6 col-ms-12">
@@ -58,40 +58,42 @@
     <!-- end section one in website -->
 
     <!-- start section two in website -->
-     <div class="container section2">
-        <div class="row">
-        <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="card">
-                <img src="images/icon1.svg" alt="">
-                <h4 data-i18n="card1_title">فريق متخصص</h4>
-                <p data-i18n="card1_desc">خبراء محترفون في مختلف المجالات.</p>
+     <div class="container">
+        <div class="cards">
+            <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="images/icon1.svg" alt="">
+                    <h4 data-i18n="card1_title">فريق متخصص</h4>
+                    <p data-i18n="card1_desc">خبراء محترفون في مختلف المجالات.</p>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="card">
-                <img src="images/icon2.svg" alt="">
-                <h4 data-i18n="card2_title">نتائج مضمونة</h4>
-                <p data-i18n="card2_desc">مشاريع ناجحة وتجارب موثوقة مع عملائنا.</p>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="images/icon2.svg" alt="">
+                    <h4 data-i18n="card2_title">نتائج مضمونة</h4>
+                    <p data-i18n="card2_desc">مشاريع ناجحة وتجارب موثوقة مع عملائنا.</p>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="card">
-                <img src="images/icon3.svg" alt="">
-                <h4 data-i18n="card3_title">خدمات متكاملة</h4>
-                <p data-i18n="card3_desc">كل ما تحتاجه لبناء مشروعك في مكان واحد.</p>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="images/icon3.svg" alt="">
+                    <h4 data-i18n="card3_title">خدمات متكاملة</h4>
+                    <p data-i18n="card3_desc">كل ما تحتاجه لبناء مشروعك في مكان واحد.</p>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="card">
-                <img src="images/icon4.svg" alt="">
-                <h4 data-i18n="card4_title">خصوصية وأمان</h4>
-                <p data-i18n="card4_desc">نحمي معلوماتك ومشروعك بأعلى المعايير.</p>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="images/icon4.svg" alt="">
+                    <h4 data-i18n="card4_title">خصوصية وأمان</h4>
+                    <p data-i18n="card4_desc">نحمي معلوماتك ومشروعك بأعلى المعايير.</p>
+                </div>
             </div>
         </div>
     </div>
     <br>
     <br>
-    <div class="row">
+    <div class="about-us row">
                     <div class="col-lg-6  col-md-12 col-ms-12">
                         <img src="images/Group 13.svg" alt="">
                     </div>
@@ -115,8 +117,8 @@
 
 
     <!-- start section three in website -->
-    <div>
-        <div class="container section3">
+    <div class="services">
+        <div class="container">
             <span data-i18n="services_label">خدماتنا !</span>
             <p data-i18n="services_desc">خدمات متخصصة تدعم نموك من البداية حتى الاحتراف</p>
             <div class="row group1">
@@ -190,8 +192,8 @@
     <!-- end section three in website -->
 
     <!-- start section four in website -->
-     <div>
-        <div class="container section4">
+     <div class="projects">
+        <div class="container">
             <span data-i18n="projects_label">أحدث المشاريع !</span>
             <p data-i18n="projects_desc">استعرض آخر المشاريع التي تم تنفيذها عبر فريق Team Work ، أفكار تحولت إلى إنجازات، ونتائج تتحدث عن نفسها.</p>
             <br>
@@ -202,10 +204,14 @@
                         <div class="text">
                             <h4 data-i18n="proj1_title">تصميم شعار لمتجر إلكتروني</h4>
                             <p data-i18n="proj1_desc">شعار حديث وبسيط يعكس هوية العلامة التجارية</p>
-                            <div class="under-btn">
-                                <span data-i18n="proj1_tag">تصميم جرافيكي</span>
-                                <img src="images/arrow-back-rounded.svg" alt="">
-                            </div>
+                            
+                                <a href="#" class="under-btn">
+                                    <span data-i18n="proj1_tag">تصميم جرافيكي</span>
+                                    <img src="images/arrow-back-rounded.svg" alt="">
+                                </a>
+                                
+                                
+                            
                         </div>
                     </div>
             </div>
@@ -215,10 +221,12 @@
                     <div class="text">
                         <h4 data-i18n="proj2_title">تطوير موقع عقاري</h4>
                         <p data-i18n="proj2_desc">موقع متجاوب بالكامل مع لوحة تحكم مخصصة للعميل</p>
-                        <div class="under-btn">
+                        
+                            <a href="#" class="under-btn">
                             <span data-i18n="proj2_tag">تطوير ويب</span>
                             <img src="images/arrow-back-rounded.svg" alt="">
-                        </div>
+                        </a>
+                        
                     </div>
                 </div>
             </div>
@@ -228,10 +236,12 @@
                     <div class="text">
                         <h4 data-i18n="proj3_title">تصميم واجهة تطبيق تعليمي</h4>
                         <p data-i18n="proj3_desc">تصميم تجربة مستخدم وواجهة رسومية لتطبيق تعليمي موجه للأطفال،</p>
-                        <div class="under-btn">
-                            <span data-i18n="proj3_tag">تصميم UX/UI</span>
-                            <img src="images/arrow-back-rounded.svg" alt="">
-                        </div>
+                        
+                            <a href="#" class="under-btn">
+                                <span data-i18n="proj3_tag">تصميم UX/UI</span>
+                                <img src="images/arrow-back-rounded.svg" alt="">
+                        </a>
+                        
                     </div>
                 </div>
             </div>
@@ -241,10 +251,11 @@
                     <div class="text">
                         <h4 data-i18n="proj4_title">تطوير تطبيق توصيل طلبات</h4>
                         <p data-i18n="proj4_desc">تطوير تطبيق أندرويد مخصص لخدمة توصيل الطلبات</p>
-                        <div class="under-btn">
+                        <a href="#" class="under-btn">
                             <span data-i18n="proj4_tag">تطوير تطبيق أندرويد</span>
                             <img src="images/arrow-back-rounded.svg" alt="">
-                        </div>
+                        </a>
+                        
                     </div>
                 </div>
             </div>
@@ -260,7 +271,7 @@
 
     <!-- start section five in website -->
 
-    <section>
+    <section class="newsletter">
         <div class="container">
             <div class="input-box">
                 <span data-i18n="newsletter_label">لا تفوّت جديد خدماتنا</span>
@@ -307,9 +318,12 @@
 
                 <ul>
                     <li class="list-header" data-i18n="footer_contact">تواصل معنا</li>
-                    <li><img src="images/Frame 17.svg" alt=""></li>
-                    <li><img src="images/Frame 16.svg" alt=""></li>
-                    <li><img src="images/Frame 15.svg" alt=""></li>
+                    <li class="footer-item">
+                        <img src="images/bx_map.svg" alt="">
+                        <span data-i18n="footer_contact_city">السعودية</span>
+                    </li>
+                    <li><img src="images/ic_outline-phone.svg" alt="">057359697</li>
+                    <li><img src="images/ic_outline-email.svg" alt="">email2@gmail.com</li>
                 </ul>
             </div>
             <h6 data-i18n="footer_rights">© 2025 Team Work. جميع الحقوق محفوظة.</h6>
