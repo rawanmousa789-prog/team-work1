@@ -100,7 +100,7 @@ header{
     background: none;
     font-size: 27px;
     color: #4924DF;
-    left: 15px;
+    /* left: 15px; */
     position: absolute;
 }
 .lang-switcher {
