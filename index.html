@@ -20,15 +20,14 @@
                 <div class="brand-name">Team Work</div>
 
                 <ul class="nav-links" id="nav-links">
-                    <li><a href="#" class="nav-link" data-i18n="nav_home">الرئيسية</a></li>
-                    <li><a href="#" class="nav-link" data-i18n="nav_about">من نحن</a></li>
-                    <li><a href="#" class="nav-link" data-i18n="nav_services">الخدمات</a></li>
-                    <li><a href="#" class="nav-link" data-i18n="nav_contact">تواصل معنا</a></li>
+                    <li><a href="#home" class="nav-link" data-i18n="nav_home">الرئيسية</a></li>
+                    <li><a href="#about" class="nav-link" data-i18n="nav_about">من نحن</a></li>
+                    <li><a href="#services" class="nav-link" data-i18n="nav_services">الخدمات</a></li>
+                    <li><a href="#contact" class="nav-link" data-i18n="nav_contact">تواصل معنا</a></li>
+
                     <div class="auth-buttons">
-                        
-                        
                         <a href="#" class="btn btn-login" style="color: #ffffff;" data-i18n="nav_login">تسجيل دخول</a>
-                        <a href="#" class="btn btn-register" data-i18n="nav_register">تسجيل</a>
+                        <a href="#register" class="btn btn-register" data-i18n="nav_register">تسجيل</a>
                     </div>
                 </ul>
             </nav>
@@ -37,7 +36,7 @@
     <!-- end header main in website -->
 
     <!-- start section one in website -->
-    <section class="hero p-2">
+    <section class="hero p-2" id="home">
         <div class="container">
             <div class="row">
             <div class="col-lg-6 col-md-6 col-ms-12">
@@ -45,7 +44,7 @@
                     <h1 data-i18n="hero_title">خدمات احترافية لمساعدتك في بناء
                     وتطوير مشروعك</h1>
                     <p data-i18n="hero_desc">استكشف حلولنا المتكاملة في التصميم، التسويق، الاستشارات، والتقنية ، فريقنا جاهز لدعم مشروعك خطوة بخطوة.</p>
-                    <button class="btn btn-explor" data-i18n="hero_btn">تعرف على خدماتنا</button>
+                    <a href="#" class="btn btn-explor" data-i18n="hero_btn">تعرف على خدماتنا</a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-ms-12">
@@ -58,7 +57,7 @@
     <!-- end section one in website -->
 
     <!-- start section two in website -->
-     <div class="container">
+    <div class="container">
         <div class="cards">
             <div class="row">
             <div class="col-lg-3 col-md-4 col-sm-6">
@@ -93,7 +92,7 @@
     </div>
     <br>
     <br>
-    <div class="about-us row">
+    <div class="about-us row" id="about">
                     <div class="col-lg-6  col-md-12 col-ms-12">
                         <img src="images/Group 13.svg" alt="">
                     </div>
@@ -106,18 +105,18 @@
     والعملاء في مكان واحد.نعمل على تمكين الورش والمراكز من 
     التواجد رقميًا، واستقبال الطلبات بكفاءة، وتوسيع قاعدة العملاء 
     دون تكاليف تسويقية.</p>
-                            <button class="btn btn-explor" data-i18n="about_btn">تعرف على المزيد</button>
+                            <a href="#" class="btn btn-explor" data-i18n="about_btn">تعرف على المزيد</a>
                         </div>
                     </div>
                 </div>
 
-     </div>
+    </div>
     
     <!-- end section two in website -->
 
 
     <!-- start section three in website -->
-    <div class="services">
+    <div class="services" id="services">
         <div class="container">
             <span data-i18n="services_label">خدماتنا !</span>
             <p data-i18n="services_desc">خدمات متخصصة تدعم نموك من البداية حتى الاحتراف</p>
@@ -192,7 +191,7 @@
     <!-- end section three in website -->
 
     <!-- start section four in website -->
-     <div class="projects">
+    <div class="projects">
         <div class="container">
             <span data-i18n="projects_label">أحدث المشاريع !</span>
             <p data-i18n="projects_desc">استعرض آخر المشاريع التي تم تنفيذها عبر فريق Team Work ، أفكار تحولت إلى إنجازات، ونتائج تتحدث عن نفسها.</p>
@@ -225,7 +224,7 @@
                             <a href="#" class="under-btn">
                             <span data-i18n="proj2_tag">تطوير ويب</span>
                             <img src="images/arrow-back-rounded.svg" alt="">
-                        </a>
+                            </a>
                         
                     </div>
                 </div>
@@ -240,7 +239,7 @@
                             <a href="#" class="under-btn">
                                 <span data-i18n="proj3_tag">تصميم UX/UI</span>
                                 <img src="images/arrow-back-rounded.svg" alt="">
-                        </a>
+                            </a>
                         
                     </div>
                 </div>
@@ -265,13 +264,13 @@
                 <img src="images/Group 23.svg" alt="">
             </div>
         </div>
-     </div>
+    </div>
 
     <!-- end section four in website -->
 
     <!-- start section five in website -->
 
-    <section class="newsletter">
+    <section class="newsletter" id="register">
         <div class="container">
             <div class="input-box">
                 <span data-i18n="newsletter_label">لا تفوّت جديد خدماتنا</span>
@@ -282,9 +281,9 @@
         </div>
     </section>
     <!-- end section five in website -->
-
+    
     <!-- start footer in website -->
-     <footer>
+    <footer id="contact">
         <div class="container">
             <div class="foot-web d-flex">
                 <div class="logo">
@@ -302,11 +301,11 @@
                 </div>
 
 
-                 <ul>
+                <ul>
                     <li class="list-header" data-i18n="footer_links">روابط سريعة</li>
-                    <li><a href="#" data-i18n="footer_home">الرئيسية</a></li>
-                    <li><a href="#" data-i18n="footer_about">من نحن</a></li>
-                    <li><a href="#" data-i18n="footer_services">خدماتنا</a></li>
+                    <li><a href="#home" data-i18n="footer_home">الرئيسية</a></li>
+                    <li><a href="#about" data-i18n="footer_about">من نحن</a></li>
+                    <li><a href="#services" data-i18n="footer_services">خدماتنا</a></li>
                 </ul>
 
 
@@ -328,10 +327,13 @@
             </div>
             <h6 data-i18n="footer_rights">© 2025 Team Work. جميع الحقوق محفوظة.</h6>
         </div>
-     </footer>
+    </footer>
 
     <!-- end footer in website -->
 
+    <div class="scroll-btn">
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </div>
     
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>

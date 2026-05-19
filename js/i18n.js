@@ -34,6 +34,7 @@ function applyTranslations(translations , lang){
         }
     });
     const hamburger = document.getElementById('hamburger');
+    
     if(lang==='ar'){
         document.documentElement.setAttribute('dir' , 'rtl');
         document.documentElement.setAttribute('lang' , 'ar');
@@ -44,6 +45,7 @@ function applyTranslations(translations , lang){
         document.documentElement.setAttribute('lang' , 'en');
         document.getElementById('lang-switcher').textContent = 'AR';
         hamburger.style.right = '15px';
+        
     }
 }
 
