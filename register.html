@@ -1,0 +1,114 @@
+<!DOCTYPE html5>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/cario.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <header class="container-fluid  login-header">
+        <a href="index.html" class="back-arrow">
+            <i class="fa fa-long-arrow-right" style="color: #8205f7;" aria-hidden="true"></i>
+        </a>
+        <div class="brand-name">Team Work</div>
+    </header>
+
+    <div class="container register-page">
+        <div class="row register-box">
+            
+            <div class="col-md-6 hidden-sm hidden-xs">
+                <div class="register-cover">
+                    <img src="images/register-cover.svg" class="img-responsive center-block" alt="Register Cover">
+                    <div class="text-center text-muted login-redirect">
+                            <span data-i18n="already-have-account">هل لديك حساب بالفعل؟</span> 
+                            <a href="login.html" class="text-purple fw-bold" data-i18n="login-link">تسجيل الدخول</a>
+                        </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-sm-10 col-xs-12 form-side">
+                <div class="register-container">
+                    
+                    <h2 class="register-title" data-i18n="register-title">إنشاء حساب</h2>
+                    <p class="register-subtitle text-muted" data-i18n="register-subtitle">للاستفادة من منصتنا، يرجى التسجيل</p>
+                    
+                    <form>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="floating-group">
+                                    <input type="text" class="floating-control" placeholder=" " required>
+                                    <label data-i18n="first-name">الاسم الأول</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="floating-group">
+                                    <input type="text" class="floating-control" placeholder=" " required>
+                                    <label data-i18n="last-name">الاسم الأخير</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="floating-group">
+                            <input type="email" class="floating-control" placeholder=" " required>
+                            <label data-i18n="email">البريد الإلكتروني</label>
+                        </div>
+
+                        <div class="floating-group">
+                            <input type="date" class="floating-control" placeholder=" " required>
+                            <label data-i18n="birth-date">تاريخ الميلاد</label>
+                        </div>
+
+                        <div class="floating-group has-icon">
+                            <input type="password" id="password" class="floating-control" placeholder=" " required>
+                            <label data-i18n="password">كلمة المرور</label>
+                            <span class="toggle-icon" onclick="toggleRegPass('regPassword', this)"><i class="fa fa-eye"></i></span>
+                        </div>
+
+                        <div class="floating-group has-icon">
+                            <input type="password" id="confirmPassword" class="floating-control" placeholder=" " required>
+                            <label data-i18n="confirm-password">تأكيد كلمة المرور</label>
+                            <span class="toggle-icon" onclick="toggleRegPass('confirmPassword', this)"><i class="fa fa-eye"></i></span>
+                        </div>
+
+                        <div class="floating-group is-select">
+                            <select class="floating-control" required>
+                                <option value="" disabled selected hidden></option>
+                                <option value="SA">المملكة العربية السعودية</option>
+                                <option value="EG">جمهورية مصر العربية</option>
+                                <option value="PS">فلسطين</option>
+                            </select>
+                            <label data-i18n="country">الدولة</label>
+                        </div>
+
+                        <div class="floating-group">
+                            <input type="text" class="floating-control" placeholder=" ">
+                            <label data-i18n="referral-code">رمز الإحالة (اختياري)</label>
+                        </div>
+
+                        <div class="checkbox policy-checkbox">
+                            <label>
+                                <input type="checkbox" required> 
+                                <span class="policy-text" data-i18n="policy-text">نعم، أنا أفهم وأوافق على <a href="#" class="text-purple" data-i18n="text-purple">شروط الخدمة</a> <a href="#" class="text-purple" data-i18n="text-personle">و سياسة الخصوصية</a></span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-purple btn-block btn-lg btn-submit" data-i18n="submit-btn">إرسال</button>
+
+                        
+                    </form>
+                    
+                </div>
+            </div> </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+</html>

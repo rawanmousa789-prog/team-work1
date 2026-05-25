@@ -65,5 +65,30 @@
     "footer_create_account": "Create an Account",
     "footer_contact": "Contact Us",
     "footer_contact_city": "Saudi Arabia",
-    "footer_rights":" © 2025 Team Work. All rights reserved."
+    "footer_rights":" © 2025 Team Work. All rights reserved.",
+
+    "title":"Login to Teamwork",
+    "email":"Email",
+    "email_placeholder":"Enter your email address",
+    "password":"Password",
+    "password_placeholder":"Enter your password",
+    "forget-password":"Forgot password?",
+    "next":"Continue",
+    "acount-check":"Don't have an account? ",
+    "acount-create": "Sign up",
+
+    "already-have-account":"I already have an account? ",
+    "login-link" :"Sign In",
+    "register-title":"Sign Up",
+    "register-subtitle":"To use our platform please sign up",
+    "first-name":"First Name",
+    "last-name":"Last Name",
+    "birth-date":"Date of Birth",
+    "confirm-password":"Confirm Password",
+    "country":"Country",
+    "referral-code":"Referral Code (Optional)",
+    "policy-text":"Yes, I understand and agree to the",
+    "text-purple":" Terms of Service ",
+    "text-personle":"and Privacy Policy",
+    "submit-btn":"Submit"
 }

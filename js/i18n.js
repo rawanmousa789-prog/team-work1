@@ -1,8 +1,8 @@
 let currentLang = localStorage.getItem('lang') || 'ar';
-
 async function loadTranslations(lang) {
     try {
         document.documentElement.classList.add('is-translating');
+
         const response = await fetch(`locales/${lang}.json`);
         if (!response.ok) throw new Error(`Could not load ${lang}.json`);
         
@@ -21,37 +21,48 @@ async function loadTranslations(lang) {
 }
 
 function applyTranslations(translations , lang){
-    document.querySelectorAll('[data-i18n]').forEach(el=>{
+    document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if(translations[key]){
             el.textContent = translations[key];
         }
     });
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
         const key = el.getAttribute('data-i18n-placeholder');
         if(translations[key]){
             el.setAttribute('placeholder', translations[key]);
         }
     });
-    const hamburger = document.getElementById('hamburger');
-    
-    if(lang==='ar'){
+
+    if(lang === 'ar'){
         document.documentElement.setAttribute('dir' , 'rtl');
         document.documentElement.setAttribute('lang' , 'ar');
-        document.getElementById('lang-switcher').textContent = 'EN';
-        hamburger.style.left = '15px';
-    }else{
+    } else {
         document.documentElement.setAttribute('dir' , 'ltr');
         document.documentElement.setAttribute('lang' , 'en');
-        document.getElementById('lang-switcher').textContent = 'AR';
-        hamburger.style.right = '15px';
-        
+    }
+
+    const langSwitcher = document.getElementById('lang-switcher');
+    if (langSwitcher) {
+        langSwitcher.textContent = lang === 'ar' ? 'EN' : 'AR';
+    }
+    const hamburger = document.getElementById('hamburger');
+    if (hamburger) {
+        if (lang === 'ar') {
+            hamburger.style.left = '15px';
+            hamburger.style.right = 'auto';
+        } else {
+            hamburger.style.right = '15px';
+            hamburger.style.left = 'auto';
+        }
     }
 }
-
-document.getElementById('lang-switcher').addEventListener('click',function(){
-    const newLang = currentLang === 'ar' ? 'en' : 'ar';
-    loadTranslations(newLang);
-});
-
+const langSwitcherBtn = document.getElementById('lang-switcher');
+if (langSwitcherBtn) {
+    langSwitcherBtn.addEventListener('click', function(){
+        const newLang = currentLang === 'ar' ? 'en' : 'ar';
+        loadTranslations(newLang);
+    });
+}
 loadTranslations(currentLang);

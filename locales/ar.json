@@ -65,5 +65,32 @@
     "footer_create_account": "أنشئ حسابًا",
     "footer_contact": "تواصل معنا",
     "footer_contact_city": "السعودية",
-    "footer_rights": "© 2025 Team Work. جميع الحقوق محفوظة."
+    "footer_rights": "© 2025 Team Work. جميع الحقوق محفوظة.",
+
+    "title":"تسجيل الدخول إلى تيم وورك",
+    "email":"البريد الإلكتروني",
+    "email_placeholder":"أدخل بريدك الالكتروني",
+    "password":"كلمة المرور",
+    "password_placeholder":"أدخل كلمة المرور",
+    "forget-password":"نسيت كلمة المرور؟",
+    "next":"متابعة",
+    "acount-check":"ليس لديك حساب؟ ",
+    "acount-create": "إنشاء حساب",
+
+
+    "already-have-account":"هل لديك حساب بالفعل؟",
+    "login-link" :"تسجيل الدخول",
+    "register-title":"إنشاء حساب",
+    "register-subtitle":"للاستفادة من منصتنا، يرجى التسجيل",
+    "first-name":"الاسم الأول",
+    "last-name":"الاسم الأخير",
+    "birth-date":"تاريخ الميلاد",
+    "confirm-password":"تأكيد كلمة المرور",
+    "country":"الدولة",
+    "referral-code":"رمز الإحالة (اختياري)",
+    "policy-text":"نعم، أنا أفهم وأوافق على ",
+    "text-purple":"شروط الخدمة",
+    "text-personle":"و سياسة الخصوصية",
+    "submit-btn":"إرسال"
+
 }

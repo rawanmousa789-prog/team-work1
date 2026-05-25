@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+body {
+    position: relative;
+    min-height: 100vh;
+}
+.login-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 20px 70px;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+.brand-name {
+    font-size: 25px;
+    font-weight: 600;
+    background-image: linear-gradient(90deg, #4924DF, #a250ee);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.back-arrow {
+    font-size: 26px;
+    text-decoration: none;
+    padding: 7px 10px;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.back-arrow:hover {
+    background-color: #a250ee41;
+    border-radius: 7px;
+}
+.register-page{
+    padding: 0;
+    overflow-x: hidden;
+}
+.register-box{
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    padding-top: 80px;
+    margin: auto;
+}
+
+.register-cover img{
+    min-height: 500px;
+    
+}
+.form-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+.register-container {
+    max-width: 440px;
+    width: 80%;
+    margin: auto;
+}
+.register-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 28px;
+    text-align: right;
+}
+.register-subtitle {
+    margin-bottom: 30px;
+    font-size: 14px;
+    text-align: right;
+}
+.floating-group {
+    position: relative;
+    margin-bottom: 22px;
+}
+.floating-control {
+    width: 100%;
+    height: 48px;
+    padding: 10px 15px;
+    font-size: 13px;
+    border: 1px solid #ececec;
+    background-color: #eeeeee7e;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+.floating-control:focus {
+    border-color: #8205f7;
+    background-color: #ffffff;
+    box-shadow: 0 0 1px 2px #8205f70d;
+}
+.floating-group label {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #999;
+    font-weight: normal;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+    background-color: transparent;
+    padding: 0 4px;
+}
+.floating-control:focus ~ label,
+.floating-control:not(:placeholder-shown) ~ label {
+    top: 0;
+    font-size: 12px;
+    color: #8205f7;
+    background-color: #ffffff;
+    font-weight: bold;
+}
+.floating-group.is-select label,
+.floating-control[type="date"] ~ label {
+    top: 0;
+    font-size: 12px;
+    background-color: #ffffff;
+}
+.floating-group.has-icon .floating-control {
+    padding-left: 40px; 
+}
+
+.floating-group .toggle-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #999;
+    z-index: 5;
+}
+.illustration-side {
+    background-color: #FBFBFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #ECECEC;
+}
+.illustration-container img {
+    max-width: 80%;
+    max-height: 450px;
+    height: auto;
+}
+.text-purple { 
+    color: #8205f7; 
+}
+.fw-bold { 
+    font-weight: bold; 
+}
+.policy-checkbox { 
+    margin: 20px 0; 
+}
+.policy-text { 
+    font-size: 13px; 
+    color: #555; 
+}
+.btn-purple {
+    background: #8205f7;
+    color: #fff !important;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+.btn-purple:hover {
+    background: #6d04cf;
+}
+.login-redirect { 
+    margin-top: 25px;
+    font-size: 14px; 
+}
+@media (max-width: 767px) {
+    .login-header {
+        padding: 15px 20px; 
+    }
+    .display-flex-match {
+        padding-top: 60px;
+    }
+    .form-side {
+        padding: 30px 20px;
+        width: 100% !important;
+    }   
+    .register-container {
+        padding: 0;
+    }
+    .register-main-title {
+        font-size: 24px;
+        text-align: center;
+    }
+    .register-subtitle {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
