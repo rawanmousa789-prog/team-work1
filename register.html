@@ -38,7 +38,7 @@
                     <p class="register-subtitle text-muted" data-i18n="register-subtitle">للاستفادة من منصتنا، يرجى التسجيل</p>
                     
                     <form>
-                        <div class="row">
+                        <div class="row name-row">
                             <div class="col-xs-6">
                                 <div class="floating-group">
                                     <input type="text" class="floating-control" placeholder=" " required>
@@ -64,15 +64,15 @@
                         </div>
 
                         <div class="floating-group has-icon">
-                            <input type="password" id="password" class="floating-control" placeholder=" " required>
+                            <input type="password" id="passwordInput" class="floating-control" placeholder=" " required>
                             <label data-i18n="password">كلمة المرور</label>
-                            <span class="toggle-icon" onclick="toggleRegPass('regPassword', this)"><i class="fa fa-eye"></i></span>
+                            <span class="toggle-icon" id="togglePassword"><i class="fa fa-eye"></i></span>
                         </div>
 
                         <div class="floating-group has-icon">
-                            <input type="password" id="confirmPassword" class="floating-control" placeholder=" " required>
+                            <input type="password" id="confirmPasswordInput" class="floating-control" placeholder=" " required>
                             <label data-i18n="confirm-password">تأكيد كلمة المرور</label>
-                            <span class="toggle-icon" onclick="toggleRegPass('confirmPassword', this)"><i class="fa fa-eye"></i></span>
+                            <span class="toggle-icon" id="toggleConfirmPassword"><i class="fa fa-eye"></i></span>
                         </div>
 
                         <div class="floating-group is-select">
@@ -93,17 +93,15 @@
                         <div class="checkbox policy-checkbox">
                             <label>
                                 <input type="checkbox" required> 
-                                <span class="policy-text" data-i18n="policy-text">نعم، أنا أفهم وأوافق على <a href="#" class="text-purple" data-i18n="text-purple">شروط الخدمة</a> <a href="#" class="text-purple" data-i18n="text-personle">و سياسة الخصوصية</a></span>
+                                <span class="policy-text" data-i18n="policy-text">نعم، أنا أفهم وأوافق على <a href="#" class="text-purple">شروط الخدمة</a> <a href="#" class="text-purple">و سياسة الخصوصية</a></span>
                             </label>
                         </div>
 
-                        <button type="submit" class="btn btn-purple btn-block btn-lg btn-submit" data-i18n="submit-btn">إرسال</button>
-
-                        
+                        <button type="submit" class="btn btn-purple btn-block btn-lg btn-submit" data-i18n="submit-btn">إرسال</button>   
                     </form>
-                    
                 </div>
-            </div> </div>
+            </div>
+        </div>
     </div>
 
     <script src="js/jquery.js"></script>

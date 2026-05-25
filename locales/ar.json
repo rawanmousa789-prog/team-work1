@@ -77,7 +77,6 @@
     "acount-check":"ليس لديك حساب؟ ",
     "acount-create": "إنشاء حساب",
 
-
     "already-have-account":"هل لديك حساب بالفعل؟",
     "login-link" :"تسجيل الدخول",
     "register-title":"إنشاء حساب",
@@ -88,9 +87,7 @@
     "confirm-password":"تأكيد كلمة المرور",
     "country":"الدولة",
     "referral-code":"رمز الإحالة (اختياري)",
-    "policy-text":"نعم، أنا أفهم وأوافق على ",
-    "text-purple":"شروط الخدمة",
-    "text-personle":"و سياسة الخصوصية",
+    "policy-text":"نعم، أنا أفهم وأوافق على شروط الخدمة وسياسة الخصوصية",
     "submit-btn":"إرسال"
 
 }

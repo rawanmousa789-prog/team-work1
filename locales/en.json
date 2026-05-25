@@ -87,8 +87,6 @@
     "confirm-password":"Confirm Password",
     "country":"Country",
     "referral-code":"Referral Code (Optional)",
-    "policy-text":"Yes, I understand and agree to the",
-    "text-purple":" Terms of Service ",
-    "text-personle":"and Privacy Policy",
+    "policy-text":"Yes, I understand and agree to the Terms of Service and Privacy Policy",
     "submit-btn":"Submit"
 }

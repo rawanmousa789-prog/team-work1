@@ -80,6 +80,10 @@ body {
     position: relative;
     margin-bottom: 22px;
 }
+.name-row{
+    gap: 15px;
+    margin: auto;
+}
 .floating-control {
     width: 100%;
     height: 48px;
@@ -96,10 +100,16 @@ body {
     background-color: #ffffff;
     box-shadow: 0 0 1px 2px #8205f70d;
 }
+.register-title,
+.register-subtitle,
+.floating-control {
+    text-align: start;
+}
 .floating-group label {
     position: absolute;
     top: 50%;
     right: 15px;
+    left: auto;
     transform: translateY(-50%);
     pointer-events: none;
     color: #999;
@@ -108,6 +118,10 @@ body {
     transition: all 0.2s ease-in-out;
     background-color: transparent;
     padding: 0 4px;
+}
+[lang="en"] .floating-group label {
+    left: 15px;
+    right: auto;
 }
 .floating-control:focus ~ label,
 .floating-control:not(:placeholder-shown) ~ label {
@@ -176,6 +190,26 @@ body {
 .login-redirect { 
     margin-top: 25px;
     font-size: 14px; 
+}
+[lang="en"] .floating-control:focus ~ label,
+[lang="en"] .floating-control:not(:placeholder-shown) ~ label,
+[lang="en"] .floating-group.is-select label,
+[lang="en"] .floating-control[type="date"] ~ label {
+    top: 0;
+    left: 15px;
+    right: auto;
+    font-size: 12px;
+    color: #8205f7;
+    background-color: #ffffff;
+    font-weight: bold;
+}
+[lang="en"] .floating-group .toggle-icon {
+    left: auto;
+    right: 15px;
+}
+[lang="en"] .floating-group.has-icon .floating-control {
+    padding-left: 15px;
+    padding-right: 40px; 
 }
 @media (max-width: 767px) {
     .login-header {
