@@ -24,3 +24,13 @@ if (toggleConfirmPassword && confirmPasswordInput) {
         icon.classList.toggle('fa-eye-slash');
     });
 }
+
+const registerForm = document.querySelector('form');
+
+if (registerForm) {
+    registerForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        console.log("جاري إرسال البيانات والتحويل لصفحة OTP...");
+        window.location.href = "otp.html";
+    });
+}

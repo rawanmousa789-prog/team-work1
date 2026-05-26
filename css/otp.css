@@ -1,0 +1,109 @@
+
+.otp-page {
+    background: linear-gradient(135deg, #8400ff, #4924DF);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.otp-card {
+    background: #ffffff1f;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid #ffffff33;
+    border-radius: 16px;
+    padding: 40px 30px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    box-shadow: 0 0 8px #ffffff33;
+}
+.back-arrow-otp {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #ffffff;
+    font-size: 20px;
+}
+.otp-icon-circle {
+    width: 70px;
+    height: 70px;
+    background: #ffffff33;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 30px;
+}
+.otp-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.otp-subtitle {
+    font-size: 14px;
+    color: #ffffffcc;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.otp-inputs-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.otp-field {
+    width: 55px;
+    height: 55px;
+    background: #ffffff26;
+    border: 1px solid #ffffff4d;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+.otp-field:focus {
+    background: #ffffff40;
+    border-color: #ffffff;
+    box-shadow: 0 0 8px #ffffff66;
+}
+.otp-helper-text {
+    font-size: 13px;
+    color: #ffffffb3;
+    margin-bottom: 25px;
+}
+.btn-otp-submit {
+    width: 100%;
+    background: #ffffff4d;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.btn-otp-submit:hover {
+    background: #ffffff73;
+}
+.otp-resend-section {
+    margin-top: 25px;
+    font-size: 14px;
+}
+.timer-text {
+    color: #ffffffcc;
+    margin-top: 5px;
+}
+.spam-notice {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #ffffff99;
+}

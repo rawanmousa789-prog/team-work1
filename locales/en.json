@@ -88,5 +88,14 @@
     "country":"Country",
     "referral-code":"Referral Code (Optional)",
     "policy-text":"Yes, I understand and agree to the Terms of Service and Privacy Policy",
-    "submit-btn":"Submit"
+    "submit-btn":"Submit",
+
+    "otp-title":"Coniform Email",
+    "otp-subtitle":"A 6-digit verification code has been sent to your email. Please enter it below.",
+    "otp-helper-text":"Enter the 6-digit verification code",
+    "btn-otp-submit":"Confirm code",
+    "no-code":"Didn't receive the code ?",
+    "timer-text":"Retransmission during",
+    "spam-notice":"Check your spam folder (Spam) if you don't find mail"
+
 }

@@ -1,0 +1,54 @@
+<!DOCTYPE html5>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP page</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/cario.css">
+    <link rel="stylesheet" href="css/otp.css">
+</head>
+<body>
+    <div class="otp-page">
+        <div class="otp-card">
+            <a href="register.html" class="back-arrow-otp">
+                <i class="fa fa-long-arrow-right"></i>
+            </a>
+            <div class="otp-icon-circle">
+                <i class="fa fa-envelope-o"></i>
+            </div>
+        
+            <h3 class="otp-title" data-i18n="otp-title">تأكيد البريد الإلكتروني</h3>
+            <p class="otp-subtitle" data-i18n="otp-subtitle">تم إرسال رمز تحقق مكون من 6 أرقام إلى بريدك الإلكتروني. الرجاء إدخاله أدناه.</p>
+        
+            <div class="otp-inputs-container" dir="ltr">
+                <input type="text" maxlength="1" class="otp-field" autocomplete="off">
+                <input type="text" maxlength="1" class="otp-field" autocomplete="off">
+                <input type="text" maxlength="1" class="otp-field" autocomplete="off">
+                <input type="text" maxlength="1" class="otp-field" autocomplete="off">
+                <input type="text" maxlength="1" class="otp-field" autocomplete="off">
+                <input type="text" maxlength="1" class="otp-field" autocomplete="off">
+            </div>
+        
+            <p class="otp-helper-text" data-i18n="otp-helper-text">أدخل رمز التحقق المكون من 6 أرقام</p>
+            <button type="button" id="confirmBtn" class="btn btn-otp-submit" data-i18n="btn-otp-submit">تأكيد الرمز</button>
+            <div class="otp-resend-section">
+                <p class="no-code" data-i18n="no-code">لم يصلك الرمز؟</p>  
+                <a href="#" id="resendBtn" class="resend-link disabled" data-i18n="resend-link" style="display: none; pointer-events: none; color: #999;">إعادة الإرسال</a>
+                <p class="timer-text" id="timerContainer">
+                    <span data-i18n="timer-text">إعادة الإرسال خلال</span> 
+                    <span id="timer" dir="ltr">04:35</span>
+                </p>
+            </div>
+            
+            <p class="spam-notice" data-i18n="spam-notice">تحقق من مجلد الرسائل غير المرغوب فيها (Spam) إن لم تجد البريد</p>
+            </div>
+    </div>
+    
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/otp.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+</html>
