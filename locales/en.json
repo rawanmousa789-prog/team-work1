@@ -96,6 +96,27 @@
     "btn-otp-submit":"Confirm code",
     "no-code":"Didn't receive the code ?",
     "timer-text":"Retransmission during",
-    "spam-notice":"Check your spam folder (Spam) if you don't find mail"
+    "spam-notice":"Check your spam folder (Spam) if you don't find mail",
+
+    "profile-main-title": "Complete Your Profile",
+    "profile-main-subtitle": "Help us understand your expertise to get started on our platform",
+    "personal-info-title": "Personal Information",
+    "personal-info-subtitle": "Tell us about your skills and experience",
+    "account-type-title": "Account Type",
+    "account-type-label": "Account Type",
+    "select-placeholder": "Select Account Type",
+    "type-freelancer": "Freelancer (Looking for projects)",
+    "type-client": "Client (Looking for freelancers)",
+    "professional-info-title": "Professional Information",
+    "main-category-label": "Main Category",
+    "category-placeholder": "Select Main Category",
+    "cat-web": "Web Development & Software",
+    "cat-design": "Design & Creative",
+    "cat-marketing": "Digital Marketing",
+    "bio-section-title": "About You",
+    "bio-label": "Short Bio",
+    "speak-about-yourself": "Tell us about yourself, your experience, and what makes you unique...",
+    "bio-note": "Write an engaging introduction that showcases your expertise and experience",
+    "btn-submit-text": "Proceed to Verification"
 
 }

@@ -1,0 +1,120 @@
+<!DOCTYPE html5>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>complete profile page</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/cario.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <div class="profile-header">
+        <h1 data-i18n="profile-main-title">أكمل ملفك الشخصي</h1>
+        <p data-i18n="profile-main-subtitle">ساعدنا في فهم خبراتك للبدء على منصتنا</p>
+    </div>
+
+    <div class="profile-wrapper">
+        <form id="completeProfileForm" class="section-container">
+            
+            <div class=" personal-info">
+                <div class="section-title-box">
+                    <div class="icon-badge icon-purple">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </div>
+                    <div class="section-title-text">
+                        <h3 data-i18n="personal-info-title">المعلومات الشخصية</h3>
+                        <p data-i18n="personal-info-subtitle">أخبرنا عن مهاراتك وخبراتك</p>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+
+            <div class="section-block">
+                <div class="section-title-box">
+                    <div class="icon-badge icon-pink">
+                        <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="section-title-text">
+                        <h3 data-i18n="account-type-title">نوع الحساب</h3>
+                    </div>
+                    
+                </div>
+
+                <div class="form-group">
+                    <label class="field-label"><span>*</span> <span data-i18n="account-type-label">نوع الحساب</span></label>
+                    <div class="select-wrapper">
+                        <i class="fa fa-user input-icon" aria-hidden="true"></i>
+                        <select id="accountType" class="floating-control form-control" required>
+                            <option value="" disabled selected hidden data-i18n="select-placeholder">اختر نوع الحساب</option>
+                            <option value="freelancer" data-i18n="type-freelancer">مستقل (أبحث عن مشاريع)</option>
+                            <option value="client" data-i18n="type-client">صاحب عمل (أبحث عن مستقلين)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <div class="section-title-box">
+                    <div class="icon-badge icon-green">
+                        <i class="fa fa-info" aria-hidden="true"></i>
+                    </div>
+                    <div class="section-title-text">
+                        <h3 data-i18n="professional-info-title">المعلومات المهنية</h3>
+                    </div>
+                    
+                </div>
+
+                <div class="form-group">
+                    <label class="field-label"><span>*</span> <span data-i18n="main-category-label">الفئة الرئيسية</span></label>
+                    <div class="select-wrapper">
+                        <i class="fa fa-info input-icon" aria-hidden="true"></i>
+                        <select id="mainCategory" class="floating-control form-control" style="padding-right: 40px; padding-left: 40px;" required>
+                            <option value="" disabled selected hidden data-i18n="category-placeholder">اختر الفئة الرئيسية</option>
+                            <option value="web-dev" data-i18n="cat-web">تطوير المواقع والبرمجيات</option>
+                            <option value="design" data-i18n="cat-design">التصميم والإبداع</option>
+                            <option value="marketing" data-i18n="cat-marketing">التسويق الرقمي</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <div class="section-title-box">
+                    <div class="icon-badge icon-orange">
+                        <i class="fa fa-file-text" aria-hidden="true"></i>
+                    </div>
+                    <div class="section-title-text">
+                        <h3 data-i18n="bio-section-title">نبذة عنك</h3>
+                    </div>
+                    
+                </div>
+
+                <div class="form-group">
+                    <label class="field-label"><span>*</span> <span data-i18n="bio-label">مقدمة قصيرة</span></label>
+                    <div class="textarea-wrapper">
+                        <textarea id="userBio" class="custom-textarea form-control" maxlength="2000" data-i18n-placeholder="speak-about-yourself" placeholder="أخبرنا عن نفسك، خبراتك، وما الذي يميزك..."  required></textarea>
+                        <div class="textarea-footer">
+                            <span class="helper-note" data-i18n="bio-note">اكتب مقدمة جذابة تبرز خبراتك وتجربتك</span>
+                            <span class="char-counter"><span id="charCount">0</span>/2000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group mt-5">
+                <button type="submit" class="btn-submit-profile" data-i18n="btn-submit-text">المتابعة إلى التحقق</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+</html>

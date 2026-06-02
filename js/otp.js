@@ -16,7 +16,7 @@ inputs.forEach((input, index) => {
 
 document.getElementById('confirmBtn').addEventListener('click', () => {
     alert("تم تأكيد الحساب بنجاح!");
-    window.location.href = "";
+    window.location.href = "profile.html";
 });
 
 let durationInSeconds = (1 * 60) + 59; 

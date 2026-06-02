@@ -96,5 +96,26 @@
     "btn-otp-submit":"تأكيد الرمز",
     "no-code":"لم يصلك الرمز ؟",
     "timer-text":"إعادة الإرسال خلال ",
-    "spam-notice":"تحقق من مجلد الرسائل غير المرغوب فيها (Spam) إن لم تجد البريد"
+    "spam-notice":"تحقق من مجلد الرسائل غير المرغوب فيها (Spam) إن لم تجد البريد",
+
+    "profile-main-title":"أكمل ملفك الشخصي",
+    "profile-main-subtitle":"ساعدنا في فهم خبراتك للبدء على منصتنا",
+    "personal-info-title":"المعلومات الشخصية",
+    "personal-info-subtitle":"أخبرنا عن مهاراتك وخبراتك",
+    "account-type-title":"نوع الحساب",
+    "account-type-label":"نوع الحساب",
+    "select-placeholder":"اختر نوع الحساب",
+    "type-freelancer":"مستقل (أبحث عن مشاريع)",
+    "type-client":"صاحب عمل (أبحث عن مستقلين)",
+    "professional-info-title":"المعلومات المهنية",
+    "main-category-label":"الفئة الرئيسية",
+    "category-placeholder":"اختر الفئة الرئيسية",
+    "cat-web":"تطوير المواقع والبرمجيات",
+    "cat-design":"التصميم والإبداع",
+    "cat-marketing":"التسويق الرقمي",
+    "bio-section-title":"نبذة عنك",
+    "bio-label":"مقدمة قصيرة",
+    "speak-about-yourself" :"أخبرنا عن نفسك، خبراتك، وما الذي يميزك...",
+    "bio-note":"اكتب مقدمة جذابة تبرز خبراتك وتجربتك",
+    "btn-submit-text":"المتابعة إلى التحقق"
 }
