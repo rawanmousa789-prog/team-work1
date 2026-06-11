@@ -25,9 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 bio: bioTextarea ? bioTextarea.value : ''
             };
 
-            console.log("تم حفظ جميع البيانات بنجاح ومستعدة للباك إند:", finalData);
+            console.log("تم حفظ جميع البيانات بنجاح", finalData);
             alert("تم إكمال ملفك الشخصي بنجاح!");
-            window.location.href = "login.html"; 
+            window.location.href = "dashboard.html"; 
         });
     }
 });

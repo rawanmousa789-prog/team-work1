@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login Page</title>
+    <title data-i18n="login-title">تسجيل دخول - Team Work</title>
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -25,12 +25,12 @@
                     <div class="panel-body p-4">
                         <h3 class="text-center login-title" data-i18n="title">تسجيل الدخول إلى تيم وورك</h3>
                         
-                        <form>
+                        <form id="loginForm">
                             <div class="form-group">
                                 <label class="control-label text-muted" data-i18n="email">البريد الإلكتروني</label>
                                 <div class="input-group custom-input-group">
                                     <span><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
-                                    <input type="email" class="form-control input-custom" data-i18n-placeholder="email_placeholder" placeholder="أدخل بريدك الإلكتروني" required>
+                                    <input type="email" id="email" class="form-control input-custom" data-i18n-placeholder="email_placeholder" placeholder="أدخل بريدك الإلكتروني" required>
                                 </div>
                             </div>
 
@@ -38,7 +38,7 @@
                                 <label class="control-label text-muted" data-i18n="password">كلمة المرور</label>
                                 <div class="input-group custom-input-group">
                                     <span><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
-                                    <input type="password" id="passwordInput" class="form-control input-custom" data-i18n-placeholder="password_placeholder" placeholder="أدخل كلمة المرور" required>
+                                    <input type="password" id="password" class="form-control input-custom" data-i18n-placeholder="password_placeholder" placeholder="أدخل كلمة المرور" required>
                                     <span class="toggle-pass-addon" id="togglePassword"><i class="fa fa-eye" aria-hidden="true"></i></span>
                                 </div>
                             </div>

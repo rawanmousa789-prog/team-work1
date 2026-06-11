@@ -136,8 +136,6 @@ header{
     position: absolute;
     left: 40px;
     top: 35px;
-    position: fixed;
-    z-index: 99;
 }
 .lang-switcher:hover {
     background: #493cad3a;
