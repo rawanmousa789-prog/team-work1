@@ -789,3 +789,13 @@ document.addEventListener('click', function(event) {
         menu.style.display = 'none';
     }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetPage = urlParams.get('page');
+    if (targetPage === 'panel-kyc' && typeof navigateDashboard === 'function') {
+        setTimeout(() => {
+            navigateDashboard('panel-kyc');
+        }, 100);
+    }
+});

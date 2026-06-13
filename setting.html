@@ -3,13 +3,785 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>setting page</title>
+    <title data-i18n="setting-title">الإعدادات</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/cario.css">
     <link rel="stylesheet" href="css/setting.css">
 </head>
 <body>
+
+    <div id="settings-container" style="font-family: 'Cairo', sans-serif; text-align: justify; padding: 30px; max-width: 1000px; margin: 0 auto; background: #ffffff;">
+        <div class="d-flex " style="justify-content: space-between; align-items: center; text-align: justify;">
+            <h2 style="font-size: 28px; font-weight: bold; color: #596f8f; margin-bottom: 20px;" data-i18n="setting-page">
+        الإعدادات
+            </h2>
+            <a href="dashboard.html"><i class="fa fa-arrow-left" style="cursor: pointer;"></i></a>
+        </div>
     
+
+    <div style="display: flex; gap: 25px; border-bottom: 1px solid #e2e8f0; margin-bottom: 30px; padding-bottom: 0;">
+        <div id="tab-user-details" class="settings-tab active-tab" onclick="switchSettingsTab('user-details')" style="padding: 10px 5px; font-size: 14px; font-weight: bold; cursor: pointer; color: #8205f7; border-bottom: 2px solid #8205f7; transition: all 0.2s;" data-i18n="tab-user-details">تفاصيل المستخدم</div>
+        <div id="tab-verification" class="settings-tab" onclick="switchSettingsTab('verification')" style="padding: 10px 5px; font-size: 14px; font-weight: 500; cursor: pointer; color: #64748b; border-bottom: 2px solid transparent; transition: all 0.2s;" data-i18n="tab-verification">التحقق</div>
+        <div id="tab-notifications" class="settings-tab" onclick="switchSettingsTab('notifications')" style="padding: 10px 5px; font-size: 14px; font-weight: 500; cursor: pointer; color: #64748b; border-bottom: 2px solid transparent; transition: all 0.2s;" data-i18n="tab-notifications">الإشعارات</div>
+    </div>
+
+    <div id="content-user-details" class="tab-content-panel" style="display: block;">
+        
+        <div style="text-align: center; margin-bottom: 40px;">
+            <div style="position: relative; display: inline-block;">
+                <img src="images/worker.avif" alt="User Avatar" style="width: 100px; height: 100px; border-radius: 50%;">
+            </div>
+            <h3 id="profile-display-name" style="margin: 15px 0 5px 0; font-size: 18px; font-weight: bold; color: #1e293b;">user name</h3>
+            <p style="margin: 0 0 8px 0; font-size: 13px; color: #64748b;" data-i18n="settings-industry-tech">البرمجة والتقنية</p>
+
+            <div style="margin-top: 15px; display: flex; flex-direction: column; align-items: center; gap: 6px; color: #64748b; font-size: 13px;">
+                <div>
+                    <i class="fa fa-map-marker" style="margin-left: 5px;"></i>
+                    <span data-i18n="country">الدولة</span>
+                </div>
+                <div>
+                    <i class="fa fa-envelope-o" style="margin-left: 5px;"></i>
+                    <span id="profile-display-email">user52260@gmail.com</span>
+                </div>
+            </div>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #f1f5f9; margin-bottom: 30px;">
+
+        <div style="display: flex; justify-content: space-between; margin-bottom: 35px; gap: 40px; text-align: justify;">
+            <div style="flex: 1;">
+                <div style="font-size: 17px; font-weight: bold; color: #1e293b; text-align: justify; margin-bottom: 20px;" data-i18n="section-account-name">اسم الحساب</div>
+                
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-size: 13px; font-weight: bold; margin-bottom: 8px; color: #334155;">
+                        <span data-i18n="label-full-name">الاسم الكامل</span> <span style="color: #ef4444;">*</span>
+                    </label>
+                    <input type="text" id="settings-input-name" style="width: 100%; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px; font-size: 13px; color: #334155; background: #f8fafc; outline: none; transition: border 0.2s;" onfocus="this.style.borderColor='#8205f7'; this.style.background='#fff'">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-size: 13px; font-weight: bold; margin-bottom: 8px; color: #334155;" data-i18n="label-about-me">نبذة عني</label>
+                    <textarea id="settings-textarea-bio" rows="4" style="width: 100%; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px; font-size: 13px; color: #334155; background: #f8fafc; outline: none; resize: vertical; transition: border 0.2s;" onfocus="this.style.borderColor='#8205f7'; this.style.background='#fff'"></textarea>
+                </div>
+
+                <button onclick="saveProfileData()" style="background: #8205f7; color: #fff; border: none; border-radius: 6px; padding: 10px 25px; font-size: 13px; font-weight: bold; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#6d04d9'" onmouseout="this.style.backgroundColor='#8205f7'" data-i18n="btn-save-changes">
+                    حفظ التغييرات
+                </button>
+            </div>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #f1f5f9; margin-bottom: 35px;">
+
+        <div style="display: flex; justify-content: space-between; margin-bottom: 35px; gap: 40px;">
+            <div style="flex: 1;">
+                <div style="margin-bottom: 20px; position: relative;">
+                    <select id="settings-account-status" style="width: 100%; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px; font-size: 13px; color: #334155; background: #ffffff; outline: none; appearance: none; -webkit-appearance: none;" onfocus="this.style.borderColor='#8205f7'">
+                        <option value="active" selected data-i18n="status-option-active">🟢 متواجد</option>
+                        <option value="inactive" data-i18n="status-option-inactive">🔴 غير متواجد</option>
+                    </select>
+                    <i class="fa fa-angle-down" style="position: absolute; top: 16px; left: 15px; color: #64748b; pointer-events: none;"></i>
+                </div>
+                
+                <button onclick="saveAccountStatus()" style="background: #8205f7; color: #fff; border: none; border-radius: 6px; padding: 10px 25px; font-size: 13px; font-weight: bold; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#6d04d9'" onmouseout="this.style.backgroundColor='#8205f7'" data-i18n="btn-save-changes">
+                    حفظ التغييرات
+                </button>
+            </div>
+            <div style="width: 150px; font-size: 14px; font-weight: bold; color: #1e293b; text-align: justify;" data-i18n="section-account-status">حالة الحساب</div>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #f1f5f9; margin-bottom: 35px;">
+
+        <div style="display: flex; justify-content: space-between; margin-bottom: 20px; gap: 40px;">
+            <div style="flex: 1;">
+                <div style="background: #ffffff; margin-bottom: 20px;">
+                    <h5 style="margin: 0 0 12px 0; font-size: 13px; font-weight: bold; color: #1e293b;" data-i18n="disable-title">ماذا يحدث عند تعطيل حسابك؟</h5>
+                    <ul style="margin: 0; padding-right: 20px; color: #475569; font-size: 13px; line-height: 1.8;">
+                        <li data-i18n="disable-rule-1">لن يتم عرض ملفك الشخصي على تيم وورك بعد الآن</li>
+                        <li data-i18n="disable-rule-2">لن يتم عرض خدماتك عبر تطبيق تيم وورك</li>
+                    </ul>
+                </div>
+                
+                <button onclick="handleDisableAccount()" style="background: #ef4444; color: #fff; border: none; border-radius: 6px; padding: 10px 25px; font-size: 13px; font-weight: bold; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#dc2626'" onmouseout="this.style.backgroundColor='#ef4444'" data-i18n="btn-disable-account">
+                    تعطيل الحساب
+                </button>
+            </div>
+            <div style="width: 150px; font-size: 14px; font-weight: bold; color: #1e293b; text-align: left;" data-i18n="section-account-disable">تعطيل الحساب</div>
+        </div>
+    </div>
+
+    <div id="content-verification" class="tab-content-panel" style="display: none; padding-top: 10px;">
+    
+    <h3 style="font-size: 18px; font-weight: bold; color: #1e293b; margin: 0 0 5px 0;" data-i18n="verify-title">التحقق من الهوية</h3>
+    <p style="font-size: 13px; color: #64748b; margin: 0 0 25px 0;" data-i18n="verify-subtitle">حالة التحقق من هويتك ومعلومات الإتفاقية</p>
+    
+    <div style="background: #fdfaff; border: 1px solid #f3e8ff; border-radius: 12px; padding: 25px 30px; display: flex; align-items: center; justify-content: space-between; gap: 20px; text-align: justify;">
+        <div style="display: flex; align-items: center; gap: 15px; text-align: justify;">
+            <div style="width: 45px; height: 45px; background: #f3e8ff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <i class="fa fa-shield" style="font-size: 20px; color: #8205f7;"></i>
+            </div>
+            <div>
+                <h4 style="margin: 0 0 6px 0; font-size: 15px; font-weight: bold; color: #1e293b;" data-i18n="verify-required-title">التحقق مطلوب</h4>
+                <p style="margin: 0; font-size: 13px; color: #64748b;" data-i18n="verify-required-desc">يجب عليك إكمال عملية التحقق من الهوية لاستخدام جميع الميزات</p>
+            </div>
+            
+        </div>
+        <a href="dashboard.html?page=panel-kyc" style="background: #8205f7; color: #ffffff; border: none; border-radius: 8px; padding: 12px 24px; font-size: 14px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#6d04d9'" onmouseout="this.style.backgroundColor='#8205f7'">
+            <i class="fa fa-shield" style="font-size: 14px;"></i>
+            <span data-i18n="btn-start-verify">ابدأ التحقق</span>
+        </a>
+
+        
+
+    </div>
+    </div>
+
+    <div id="content-notifications" class="tab-content-panel" style="display: none; padding-top: 10px; font-family: 'Cairo', sans-serif;">
+    
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; text-align: justify;">
+        <span style="font-size: 13px; color: #64748b;" data-i18n="notify-manage-way">إدارة طريقة استلام الإشعارات</span>
+        <h3 style="font-size: 16px; font-weight: bold; color: #1e293b; margin: 0;" data-i18n="notify-preferences">تفضيلات الإشعارات</h3>
+    </div>
+
+    <!--قسم الحساب -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; text-align: justify;">
+        <h4 style="font-size: 15px; font-weight: bold; color: #1e293b; margin: 0;" data-i18n="notify-account-section">الحساب</h4>
+        <div style="display: flex; gap: 15px; font-size: 13px;">
+            <span onclick="toggleSectionNotifications('account', false)" style="color: #64748b; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye-slash"></i> <span data-i18n="notify-disable-all">تعطيل الكل</span>
+            </span>
+            <span style="color: #cbd5e1;">|</span>
+            <span onclick="toggleSectionNotifications('account', true)" style="color: #8205f7; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye"></i> <span data-i18n="notify-enable-all">تفعيل الكل</span>
+            </span>
+        </div>
+        
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; text-align: justify;">
+        <div class="notification-row">
+            <div class="row-title-with-icon"><span data-i18n="notify-suspend">تعليق الحساب</span><i class="fa fa-lock" style="color: #94a3b8; font-size: 14px;"></i></div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-account notify-bell"><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-account notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+            
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-add-bank">إضافة حساب بنكي</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-account notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-account notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+            
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-update-bank">تحديث الحساب البنكي</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-account notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-account notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+            
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-add-paypal">إضافة حساب باي بال</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-account notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-account notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+            
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-update-paypal">تحديث حساب باي بال</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-account notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-account notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+            
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-add-vfcash">إضافة حساب VfCash</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-account notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-account notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+            
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-update-vfcash">تحديث حساب VfCash</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-account notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-account notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; text-align: justify;">
+    <h4 style="font-size: 15px; font-weight: bold; color: #1e293b; margin: 0;" data-i18n="notify-chat-section">المحادثات والرسائل</h4>
+    <div style="display: flex; gap: 15px; font-size: 13px;">
+        <span onclick="toggleSectionNotifications('chat', false)" style="color: #64748b; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+            <i class="fa fa-eye-slash"></i> <span data-i18n="notify-disable-all">تعطيل الكل</span>
+        </span>
+        <span style="color: #cbd5e1;">|</span>
+        <span onclick="toggleSectionNotifications('chat', true)" style="color: #8205f7; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+            <i class="fa fa-eye"></i> <span data-i18n="notify-enable-all">تفعيل الكل</span>
+        </span>
+    </div>
+</div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; text-align: justify;">
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-new-msg">رسالة محادثة جديدة</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-chat notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-chat notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-chat-warn">تحذير المحادثة</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-chat notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-chat notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-chat-block">حظر المحادثة</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-chat notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-chat notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; text-align: justify;">
+        <h4 style="font-size: 15px; font-weight: bold; color: #1e293b; margin: 0;" data-i18n="notify-contracts-section">العقود</h4>
+        <div style="display: flex; gap: 15px; font-size: 13px;">
+            <span onclick="toggleSectionNotifications('contracts', false)" style="color: #64748b; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye-slash"></i> <span data-i18n="notify-disable-all">تعطيل الكل</span>
+            </span>
+            <span style="color: #cbd5e1;">|</span>
+            <span onclick="toggleSectionNotifications('contracts', true)" style="color: #8205f7; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye"></i> <span data-i18n="notify-enable-all">تفعيل الكل</span>
+            </span>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; text-align: justify;">
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-contract-approve-provider">الموافقة على العقد (مقدم الخدمة)</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-contracts notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-contracts notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-contract-approve-client">الموافقة على العقد (طالب الخدمة)</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-contracts notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-contracts notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-contract-reject-provider">رفض العقد (مقدم الخدمة)</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-contracts notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-contracts notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-contract-reject-client">رفض العقد (طالب الخدمة)</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-contracts notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-contracts notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-contract-request">طلب عقد جديد</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-contracts notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-contracts notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; text-align: justify;">
+        <h4 style="font-size: 15px; font-weight: bold; color: #1e293b; margin: 0;" data-i18n="notify-identity-section">التحقق من الهوية</h4>
+        <div style="display: flex; gap: 15px; font-size: 13px;">
+            <span onclick="toggleSectionNotifications('identity', false)" style="color: #64748b; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye-slash"></i> <span data-i18n="notify-disable-all">تعطيل الكل</span>
+            </span>
+            <span style="color: #cbd5e1;">|</span>
+            <span onclick="toggleSectionNotifications('identity', true)" style="color: #8205f7; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye"></i> <span data-i18n="notify-enable-all">تفعيل الكل</span>
+            </span>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; text-align: justify;">
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-identity-approve">الموافقة على التحقق</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-identity notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-identity notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-identity-reject">رفض التحقق</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-identity notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-identity notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-identity-remind">تذكير التحقق</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-identity notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-identity notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; text-align: justify;">
+        <h4 style="font-size: 15px; font-weight: bold; color: #1e293b; margin: 0;" data-i18n="notify-offers-section">العروض</h4>
+        <div style="display: flex; gap: 15px; font-size: 13px;">
+            <span onclick="toggleSectionNotifications('offers', false)" style="color: #64748b; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye-slash"></i> <span data-i18n="notify-disable-all">تعطيل الكل</span>
+            </span>
+            <span style="color: #cbd5e1;">|</span>
+            <span onclick="toggleSectionNotifications('offers', true)" style="color: #8205f7; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye"></i> <span data-i18n="notify-enable-all">تفعيل الكل</span>
+            </span>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; text-align: justify;">
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-offer-receive">استلام عرض جديد</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-offers notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-offers notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; text-align: justify;">
+        <h4 style="font-size: 15px; font-weight: bold; color: #1e293b; margin: 0;" data-i18n="notify-orders-section">الطلبات</h4>
+        <div style="display: flex; gap: 15px; font-size: 13px;">
+            <span onclick="toggleSectionNotifications('orders', false)" style="color: #64748b; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye-slash"></i> <span data-i18n="notify-disable-all">تعطيل الكل</span>
+            </span>
+            <span style="color: #cbd5e1;">|</span>
+            <span onclick="toggleSectionNotifications('orders', true)" style="color: #8205f7; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye"></i> <span data-i18n="notify-enable-all">تفعيل الكل</span>
+            </span>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; text-align: justify;">
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-order-new">طلب جديد</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-order-approve">الموافقة على الطلب</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-order-cancel-request">طلب إلغاء الطلب</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-order-cancel">إلغاء الطلب</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-order-complete">اكتمال الطلب</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-order-buy">شراء الطلب</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-order-refund">استرداد الطلب</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-order-cancel-reject">رفض طلب الإلغاء</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-order-reject">رفض الطلب</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-order-edit">تحرير الطلب</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-order-renew">تجديد الطلب</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-order-edit-request">طلب تحرير الطلب</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-order-review-request">طلب مراجعة الطلب</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-orders notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; text-align: justify;">
+        <h4 style="font-size: 15px; font-weight: bold; color: #1e293b; margin: 0;" data-i18n="notify-payments-section">المدفوعات</h4>
+        <div style="display: flex; gap: 15px; font-size: 13px;">
+            <span onclick="toggleSectionNotifications('payments', false)" style="color: #64748b; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye-slash"></i> <span data-i18n="notify-disable-all">تعطيل الكل</span>
+            </span>
+            <span style="color: #cbd5e1;">|</span>
+            <span onclick="toggleSectionNotifications('payments', true)" style="color: #8205f7; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye"></i> <span data-i18n="notify-enable-all">تفعيل الكل</span>
+            </span>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; text-align: justify;">
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-payment-request">تقديم طلب دفع</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-payments notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-payments notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-payment-approve">الموافقة على طلب الدفع</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-payments notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-payments notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-payment-reject">رفض طلب الدفع</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-payments notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-payments notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-payment-receipt">إيصال الدفع</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-payments notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-payments notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; text-align: justify;">
+        <h4 style="font-size: 15px; font-weight: bold; color: #1e293b; margin: 0;" data-i18n="notify-portfolio-section">معرض الأعمال</h4>
+        <div style="display: flex; gap: 15px; font-size: 13px;">
+            <span onclick="toggleSectionNotifications('portfolio', false)" style="color: #64748b; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye-slash"></i> <span data-i18n="notify-disable-all">تعطيل الكل</span>
+            </span>
+            <span style="color: #cbd5e1;">|</span>
+            <span onclick="toggleSectionNotifications('portfolio', true)" style="color: #8205f7; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye"></i> <span data-i18n="notify-enable-all">تفعيل الكل</span>
+            </span>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; text-align: justify;">
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-portfolio-add">إضافة عنصر للمعرض</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-portfolio notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-portfolio notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; text-align: justify;">
+        <h4 style="font-size: 15px; font-weight: bold; color: #1e293b; margin: 0;" data-i18n="notify-reports-section">التقارير</h4>
+        <div style="display: flex; gap: 15px; font-size: 13px;">
+            <span onclick="toggleSectionNotifications('reports', false)" style="color: #64748b; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye-slash"></i> <span data-i18n="notify-disable-all">تعطيل الكل</span>
+            </span>
+            <span style="color: #cbd5e1;">|</span>
+            <span onclick="toggleSectionNotifications('reports', true)" style="color: #8205f7; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye"></i> <span data-i18n="notify-enable-all">تفعيل الكل</span>
+            </span>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; text-align: justify;">
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-report-submit">تقديم تقرير</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-reports notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-reports notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; text-align: justify;">
+        <h4 style="font-size: 15px; font-weight: bold; color: #1e293b; margin: 0;" data-i18n="notify-security-section">الأمان</h4>
+        <div style="display: flex; gap: 15px; font-size: 13px;">
+            <span onclick="toggleSectionNotifications('security', false)" style="color: #64748b; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye-slash"></i> <span data-i18n="notify-disable-all">تعطيل الكل</span>
+            </span>
+            <span style="color: #cbd5e1;">|</span>
+            <span onclick="toggleSectionNotifications('security', true)" style="color: #8205f7; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye"></i> <span data-i18n="notify-enable-all">تفعيل الكل</span>
+            </span>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; text-align: justify;">
+        <div class="notification-row">
+            <div class="row-title-with-icon"><span data-i18n="notify-login-alert">تنبيه تسجيل دخول جديد</span><i class="fa fa-lock" style="color: #94a3b8; font-size: 14px;"></i></div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-security notify-bell"><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-security notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title-with-icon"><span data-i18n="notify-password-reset">إعادة تعيين كلمة المرور</span><i class="fa fa-lock" style="color: #94a3b8; font-size: 14px;"></i></div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-security notify-bell"><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-security notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; text-align: justify;">
+        <h4 style="font-size: 15px; font-weight: bold; color: #1e293b; margin: 0;" data-i18n="notify-services-section">الخدمات</h4>
+        <div style="display: flex; gap: 15px; font-size: 13px;">
+            <span onclick="toggleSectionNotifications('services', false)" style="color: #64748b; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye-slash"></i> <span data-i18n="notify-disable-all">تعطيل الكل</span>
+            </span>
+            <span style="color: #cbd5e1;">|</span>
+            <span onclick="toggleSectionNotifications('services', true)" style="color: #8205f7; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye"></i> <span data-i18n="notify-enable-all">تفعيل الكل</span>
+            </span>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; text-align: justify;">
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-service-one-time">إضافة خدمة لمرة واحدة</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-services notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-services notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-service-part-time">إضافة خدمة دوام جزئي</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-services notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-services notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; text-align: justify;">
+        <h4 style="font-size: 15px; font-weight: bold; color: #1e293b; margin: 0;" data-i18n="notify-wallet-section">المحفظة</h4>
+        <div style="display: flex; gap: 15px; font-size: 13px;">
+            <span onclick="toggleSectionNotifications('wallet', false)" style="color: #64748b; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye-slash"></i> <span data-i18n="notify-disable-all">تعطيل الكل</span>
+            </span>
+            <span style="color: #cbd5e1;">|</span>
+            <span onclick="toggleSectionNotifications('wallet', true)" style="color: #8205f7; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye"></i> <span data-i18n="notify-enable-all">تفعيل الكل</span>
+            </span>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; text-align: justify;">
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-wallet-deposit">إيداع في المحفظة</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-wallet notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-wallet notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-wallet-deduct">خصم من المحفظة</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-wallet notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-wallet notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; text-align: justify;">
+        <h4 style="font-size: 15px; font-weight: bold; color: #1e293b; margin: 0;" data-i18n="notify-welcome-section">الترحيب والبدء</h4>
+        <div style="display: flex; gap: 15px; font-size: 13px;">
+            <span onclick="toggleSectionNotifications('welcome', false)" style="color: #64748b; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye-slash"></i> <span data-i18n="notify-disable-all">تعطيل الكل</span>
+            </span>
+            <span style="color: #cbd5e1;">|</span>
+            <span onclick="toggleSectionNotifications('welcome', true)" style="color: #8205f7; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye"></i> <span data-i18n="notify-enable-all">تفعيل الكل</span>
+            </span>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; text-align: justify;">
+        <div class="notification-row">
+            <div class="row-title-with-icon"><span data-i18n="notify-account-activate">تفعيل الحساب</span><i class="fa fa-lock" style="color: #94a3b8; font-size: 14px;"></i></div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-welcome notify-bell"><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-welcome notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-profile-remind">تذكير إكمال الملف الشخصي</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-welcome notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-welcome notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; text-align: justify;">
+        <h4 style="font-size: 15px; font-weight: bold; color: #1e293b; margin: 0;" data-i18n="notify-email-verify-section">التحقق من البريد الإلكتروني</h4>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; text-align: justify;">
+        <div class="notification-row">
+            <div class="row-title-with-icon"><span data-i18n="notify-email-verify">التحقق من البريد الإلكتروني</span><i class="fa fa-lock" style="color: #94a3b8; font-size: 14px;"></i></div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-email-verify notify-bell"><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-email-verify notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title-with-icon"><span data-i18n="notify-email-verify-code">رمز التحقق من البريد الإلكتروني</span><i class="fa fa-lock" style="color: #94a3b8; font-size: 14px;"></i></div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-email-verify notify-bell"><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-email-verify notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; text-align: justify;">
+        <h4 style="font-size: 15px; font-weight: bold; color: #1e293b; margin: 0;" data-i18n="notification_categories.moderation">إشعارات الرقابة والإدارة</h4>
+        <div style="display: flex; gap: 15px; font-size: 13px;">
+            <span onclick="toggleSectionNotifications('moderation', false)" style="color: #64748b; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye-slash"></i> <span data-i18n="notify-disable-all">تعطيل الكل</span>
+            </span>
+            <span style="color: #cbd5e1;">|</span>
+            <span onclick="toggleSectionNotifications('moderation', true)" style="color: #8205f7; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye"></i> <span data-i18n="notify-enable-all">تفعيل الكل</span>
+            </span>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; text-align: justify;">
+        <div class="notification-row">
+            <div class="row-title-with-icon"><span data-i18n="notify-moderation-warning">تحذير الرقابة والالتزام</span><i class="fa fa-lock" style="color: #94a3b8; font-size: 14px;"></i></div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-moderation notify-bell"><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-moderation notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title-with-icon"><span data-i18n="notify-moderation-suspension">إيقاف الحساب المؤقت</span><i class="fa fa-lock" style="color: #94a3b8; font-size: 14px;"></i></div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-moderation notify-bell"><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-moderation notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-moderation-appeal-accepted">قبول طلب الاعتراض</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-moderation notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-moderation notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-moderation-appeal-rejected">رفض طلب الاعتراض</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-moderation notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-moderation notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; text-align: justify;">
+        <h4 style="font-size: 15px; font-weight: bold; color: #1e293b; margin: 0;" data-i18n="notify-admin-section">إشعارات الإدارة</h4>
+        <div style="display: flex; gap: 15px; font-size: 13px;">
+            <span onclick="toggleSectionNotifications('admin', false)" style="color: #64748b; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye-slash"></i> <span data-i18n="notify-disable-all">تعطيل الكل</span>
+            </span>
+            <span style="color: #cbd5e1;">|</span>
+            <span onclick="toggleSectionNotifications('admin', true)" style="color: #8205f7; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa fa-eye"></i> <span data-i18n="notify-enable-all">تفعيل الكل</span>
+            </span>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; text-align: justify;">
+        <div class="notification-row">
+            <div class="row-title" data-i18n="notify-admin-messages">إشعارات الإدارة</div>
+            <div class="switch-actions-group">
+                <div class="switch-wrapper"><i class="fa fa-bell-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-admin notify-bell" checked><span class="custom-switch-slider"></span></label></div>
+                <div class="switch-wrapper"><i class="fa fa-envelope-o"></i><label class="custom-switch-label"><input type="checkbox" class="notify-switch notify-admin notify-email" checked><span class="custom-switch-slider"></span></label></div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/setting.js"></script>
 </body>
 </html>

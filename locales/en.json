@@ -408,7 +408,122 @@
     "modal-certificate-type-other": "Other (Specify below)",
     "modal-certificate-title-placeholder": "Detailed certificate title (e.g., Advanced Front-End Development)",
     "modal-certificate-year-select": "Year of Issuance",
+    "home-menu":"Back to main page",
 
-    "home-menu":"Back to main page"
+    "setting-title":"Setting Page",
+    "setting-page":"Setting",
+    "tab-user-details": "User Details",
+    "tab-verification": "Verification",
+    "tab-notifications": "Notifications",
 
+    "settings-industry-tech": "Programming & Tech",
+    "country": "Country",
+    "section-account-name": "Account Name",
+    "label-full-name": "Full Name",
+    "label-about-me": "About Me",
+    "btn-save-changes": "Save Changes",
+    "section-account-status": "Account Status",
+    "status-option-active": "🟢 Active",
+    "status-option-inactive": "🔴 Inactive",
+    "disable-title": "What happens when you disable your account?",
+    "disable-rule-1": "Your profile will no longer be displayed on Team Work",
+    "disable-rule-2": "Your services will no longer be shown via Team Work app",
+    "btn-disable-account": "Disable Account",
+    "section-account-disable": "Disable Account",
+
+    "verify-title": "Identity Verification",
+    "verify-subtitle": "Status of your identity verification and agreement information",
+    "btn-start-verify": "Start Verification",
+    "verify-required-title": "Verification Required",
+    "verify-required-desc": "You must complete the identity verification process to use all features",
+
+    "notify-manage-way": "Manage notification delivery method",
+    "notify-preferences": "Notification preferences",
+
+    "notify-account-section": "Account",
+    "notify-disable-all": "Disable All",
+    "notify-enable-all": "Enable All",
+    "notify-suspend": "Account Suspension",
+    "notify-add-bank": "Add Bank Account",
+    "notify-update-bank": "Update Bank Account",
+    "notify-add-paypal": "Add PayPal Account",
+    "notify-update-paypal": "Update PayPal Account",
+    "notify-add-vfcash": "Add VfCash Account",
+    "notify-update-vfcash": "Update VfCash Account",
+    
+    "notify-chat-section": "Chats and Messages",
+    "notify-new-msg": "New Chat Message",
+    "notify-chat-warn": "Chat Warning",
+    "notify-chat-block": "Chat Block",
+    
+    "notify-contracts-section": "Contracts",
+    "notify-contract-approve-provider": "Contract Approval (Service Provider)",
+    "notify-contract-approve-client": "Contract Approval (Client)",
+    "notify-contract-reject-provider": "Contract Rejection (Service Provider)",
+    "notify-contract-reject-client": "Contract Rejection (Client)",
+    "notify-contract-request": "New Contract Request",
+    
+    "notify-identity-section": "Identity Verification",
+    "notify-identity-approve": "Verification Approved",
+    "notify-identity-reject": "Verification Rejected",
+    "notify-identity-remind": "Verification Reminder",
+    
+    "notify-offers-section": "Offers",
+    "notify-offer-receive": "Receive New Offer",
+    
+    "notify-orders-section": "Orders",
+    "notify-order-new": "New Order",
+    "notify-order-approve": "Order Approved",
+    "notify-order-cancel-request": "Order Cancellation Request",
+    "notify-order-cancel": "Order Cancelled",
+    "notify-order-complete": "Order Completed",
+    "notify-order-buy": "Order Purchased",
+    "notify-order-refund": "Order Refunded",
+    "notify-order-cancel-reject": "Cancellation Request Rejected",
+    "notify-order-reject": "Order Rejected",
+    "notify-order-edit": "Edit Order",
+    "notify-order-renew": "Renew Order",
+    "notify-order-edit-request": "Order Edit Request",
+    "notify-order-review-request": "Order Review Request",
+    
+    "notify-payments-section": "Payments",
+    "notify-payment-request": "Submit Payment Request",
+    "notify-payment-approve": "Payment Request Approved",
+    "notify-payment-reject": "Payment Request Rejected",
+    "notify-payment-receipt": "Payment Receipt",
+    
+    "notify-portfolio-section": "Portfolio",
+    "notify-portfolio-add": "Add Item to Portfolio",
+    
+    "notify-reports-section": "Reports",
+    "notify-report-submit": "Submit Report",
+    
+    "notify-security-section": "Security",
+    "notify-login-alert": "New Login Alert",
+    "notify-password-reset": "Reset Password",
+    
+    "notify-services-section": "Services",
+    "notify-service-one-time": "Add One-Time Service",
+    "notify-service-part-time": "Add Part-Time Service",
+    
+    "notify-wallet-section": "Wallet",
+    "notify-wallet-deposit": "Deposit into Wallet",
+    "notify-wallet-deduct": "Deduct from Wallet",
+    
+    "notify-welcome-section": "Welcome and Onboarding",
+    "notify-account-activate": "Activate Account",
+    "notify-profile-remind": "Complete Profile Reminder",
+    
+    "notify-email-verify-section": "Email Verification",
+    "notify-email-verify": "Verify Email",
+    "notify-email-verify-code": "Email Verification Code",
+    
+    "notify-moderation-warning": "Moderation and Compliance Warning",
+    "notify-moderation-suspension": "Temporary Account Suspension",
+    "notify-moderation-appeal-accepted": "Appeal Request Accepted",
+    "notify-moderation-appeal-rejected": "Appeal Request Rejected",
+
+    
+    "notify-admin-section": "Administration Notifications",
+    "notify-admin-messages": "Admin Notifications"
 }

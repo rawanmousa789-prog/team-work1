@@ -408,6 +408,122 @@
     "modal-certificate-type-other": "أخرى (اكتبيها بالأسفل)",
     "modal-certificate-title-placeholder": "عنوان الشهادة بالتفصيل (مثل: Advanced Front-End Development)",
     "modal-certificate-year-select": "سنة الإصدار",
+    "home-menu":"العودة الى الرئيسية",
 
-    "home-menu":"العودة الى الرئيسية"
+    "setting-title":"الإعدادات",
+    "setting-page":"الإعدادات",
+    "tab-user-details":"تفاصيل المستخدم",
+    "tab-verification":"التحقق",
+    "tab-notifications":"الإشعارات",
+
+    "settings-industry-tech": "البرمجة والتقنية",
+    "country": "الدولة",
+    "section-account-name": "اسم الحساب",
+    "label-full-name": "الاسم الكامل",
+    "label-about-me": "نبذة عني",
+    "btn-save-changes": "حفظ التغييرات",
+    "section-account-status": "حالة الحساب",
+    "status-option-active": "🟢 متواجد",
+    "status-option-inactive": "🔴 غير متواجد",
+    "disable-title": "ماذا يحدث عند تعطيل حسابك؟",
+    "disable-rule-1": "لن يتم عرض ملفك الشخصي على تيم وورك بعد الآن",
+    "disable-rule-2": "لن يتم عرض خدماتك عبر تطبيق تيم وورك",
+    "btn-disable-account": "تعطيل الحساب",
+    "section-account-disable": "تعطيل الحساب",
+
+    "verify-title": "التحقق من الهوية",
+    "verify-subtitle": "حالة التحقق من هويتك ومعلومات الإتفاقية",
+    "btn-start-verify": "ابدأ التحقق",
+    "verify-required-title": "التحقق مطلوب",
+    "verify-required-desc": "يجب عليك إكمال عملية التحقق من الهوية لاستخدام جميع الميزات",
+
+    "notify-manage-way":"إدارة طريقة استلام الإشعارات",
+    "notify-preferences":"تفضيلات الإشعارات",
+
+    "notify-account-section": "الحساب",
+    "notify-disable-all": "تعطيل الكل",
+    "notify-enable-all": "تفعيل الكل",
+    "notify-suspend": "تعليق الحساب",
+    "notify-add-bank": "إضافة حساب بنكي",
+    "notify-update-bank": "تحديث الحساب البنكي",
+    "notify-add-paypal": "إضافة حساب باي بال",
+    "notify-update-paypal": "تحديث حساب باي بال",
+    "notify-add-vfcash": "إضافة حساب VfCash",
+    "notify-update-vfcash": "تحديث حساب VfCash",
+    
+    "notify-chat-section": "المحادثات والرسائل",
+    "notify-new-msg": "رسالة محادثة جديدة",
+    "notify-chat-warn": "تحذير المحادثة",
+    "notify-chat-block": "حظر المحادثة",
+    
+    "notify-contracts-section": "العقود",
+    "notify-contract-approve-provider": "الموافقة على العقد (مقدم الخدمة)",
+    "notify-contract-approve-client": "الموافقة على العقد (طالب الخدمة)",
+    "notify-contract-reject-provider": "رفض العقد (مقدم الخدمة)",
+    "notify-contract-reject-client": "رفض العقد (طالب الخدمة)",
+    "notify-contract-request": "طلب عقد جديد",
+    
+    "notify-identity-section": "التحقق من الهوية",
+    "notify-identity-approve": "الموافقة على التحقق",
+    "notify-identity-reject": "رفض التحقق",
+    "notify-identity-remind": "تذكير التحقق",
+    
+    "notify-offers-section": "العروض",
+    "notify-offer-receive": "استلام عرض جديد",
+    
+    "notify-orders-section": "الطلبات",
+    "notify-order-new": "طلب جديد",
+    "notify-order-approve": "الموافقة على الطلب",
+    "notify-order-cancel-request": "طلب إلغاء الطلب",
+    "notify-order-cancel": "إلغاء الطلب",
+    "notify-order-complete": "اكتمال الطلب",
+    "notify-order-buy": "شراء الطلب",
+    "notify-order-refund": "استرداد الطلب",
+    "notify-order-cancel-reject": "رفض طلب الإلغاء",
+    "notify-order-reject": "رفض الطلب",
+    "notify-order-edit": "تحرير الطلب",
+    "notify-order-renew": "تجديد الطلب",
+    "notify-order-edit-request": "طلب تحرير الطلب",
+    "notify-order-review-request": "طلب مراجعة الطلب",
+    
+    "notify-payments-section": "المدفوعات",
+    "notify-payment-request": "تقديم طلب دفع",
+    "notify-payment-approve": "الموافقة على طلب الدفع",
+    "notify-payment-reject": "رفض طلب الدفع",
+    "notify-payment-receipt": "إيصال الدفع",
+    
+    "notify-portfolio-section": "معرض الأعمال",
+    "notify-portfolio-add": "إضافة عنصر للمعرض",
+    
+    "notify-reports-section": "التقارير",
+    "notify-report-submit": "تقديم تقرير",
+    
+    "notify-security-section": "الأمان",
+    "notify-login-alert": "تنبيه تسجيل دخول جديد",
+    "notify-password-reset": "إعادة تعيين كلمة المرور",
+    
+    "notify-services-section": "الخدمات",
+    "notify-service-one-time": "إضافة خدمة لمرة واحدة",
+    "notify-service-part-time": "إضافة خدمة دوام جزئي",
+    
+    "notify-wallet-section": "المحفظة",
+    "notify-wallet-deposit": "إيداع في المحفظة",
+    "notify-wallet-deduct": "خصم من المحفظة",
+    
+    "notify-welcome-section": "الترحيب والبدء",
+    "notify-account-activate": "تفعيل الحساب",
+    "notify-profile-remind": "تذكير إكمال الملف الشخصي",
+    
+    "notify-email-verify-section": "التحقق من البريد الإلكتروني",
+    "notify-email-verify": "التحقق من البريد الإلكتروني",
+    "notify-email-verify-code": "رمز التحقق من البريد الإلكتروني",
+    
+    "notify-moderation-warning": "تحذير الرقابة والالتزام",
+    "notify-moderation-suspension": "إيقاف الحساب المؤقت",
+    "notify-moderation-appeal-accepted": "قبول طلب الاعتراض",
+    "notify-moderation-appeal-rejected": "رفض طلب الاعتراض",
+    
+    "notify-admin-section": "إشعارات الإدارة",
+    "notify-admin-messages": "إشعارات الإدارة"
+
 }
