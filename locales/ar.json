@@ -410,6 +410,8 @@
     "modal-certificate-year-select": "سنة الإصدار",
     "home-menu":"العودة الى الرئيسية",
 
+    "menu-settings": "الإعدادات",
+    "menu-logout": "تسجيل الخروج",
     "setting-title":"الإعدادات",
     "setting-page":"الإعدادات",
     "tab-user-details":"تفاصيل المستخدم",
@@ -524,6 +526,11 @@
     "notify-moderation-appeal-rejected": "رفض طلب الاعتراض",
     
     "notify-admin-section": "إشعارات الإدارة",
-    "notify-admin-messages": "إشعارات الإدارة"
+    "notify-admin-messages": "إشعارات الإدارة",
+
+    "logout-title": "تأكيد تسجيل الخروج",
+    "logout-message": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+    "btn-confirm": "تأكيد",
+    "btn-cancel": "إلغاء"
 
 }

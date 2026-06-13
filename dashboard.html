@@ -89,7 +89,7 @@
             <div class="col-lg-7 col-md-6 col-sm-12">
                 <main class="main-dashboard-content">
                     <div id="panel-overview" class="dashboard-view-panel active">
-                        <div style="margin-bottom: 25px;">
+                        <div style="margin-bottom: 25px; text-align: justify;">
                             <h2 style="font-size: 22px; font-weight: bold; color: #1e293b; margin: 0 0 5px 0;" data-i18n="dashboard-header">لوحة التحكم</h2>
                             <p class="text-muted" style="font-size: 13px; margin: 0;" data-i18n="welcome-back">مرحباً بعودتك، لنعد إلى العمل</p>
                         </div>
@@ -1104,6 +1104,18 @@
                 
                 <button type="submit" class="btn" style="width: 100%; background-color: #8205f7; color: #fff; font-weight: 600; padding: 12px; border-radius: 6px; border: none; font-size: 15px; cursor: pointer;" data-i18n="btn-submit">إرسال</button>
             </form>
+        </div>
+    </div>
+
+    <div id="logout-modal" class="custom-modal-overlay" style="display: none;">
+        <div class="custom-modal-box">
+            <h3 data-i18n="logout-title">تأكيد تسجيل الخروج</h3>
+            <p data-i18n="logout-message">هل أنت متأكد أنك تريد تسجيل الخروج؟</p>
+            
+            <div class="modal-buttons-group">
+                <button onclick="confirmLogout()" class="btn-confirm" data-i18n="btn-confirm">تأكيد</button>
+                <button onclick="closeLogoutModal()" class="btn-cancel" data-i18n="btn-cancel">إلغاء</button>
+            </div>
         </div>
     </div>
 

@@ -799,3 +799,19 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 100);
     }
 });
+
+function handleLogout() {
+    document.getElementById('logout-modal').style.display = 'flex';
+}
+function closeLogoutModal() {
+    document.getElementById('logout-modal').style.display = 'none';
+}
+function confirmLogout() {
+    window.location.href = 'login.html'; 
+}
+window.onclick = function(event) {
+    const modal = document.getElementById('logout-modal');
+    if (event.target === modal) {
+        closeLogoutModal();
+    }
+}

@@ -410,6 +410,8 @@
     "modal-certificate-year-select": "Year of Issuance",
     "home-menu":"Back to main page",
 
+    "menu-settings": "Settings",
+    "menu-logout": "Logout",
     "setting-title":"Setting Page",
     "setting-page":"Setting",
     "tab-user-details": "User Details",
@@ -525,5 +527,10 @@
 
     
     "notify-admin-section": "Administration Notifications",
-    "notify-admin-messages": "Admin Notifications"
+    "notify-admin-messages": "Admin Notifications",
+
+    "logout-title": "Confirm Logout",
+    "logout-message": "Are you sure you want to log out?",
+    "btn-confirm": "Confirm",
+    "btn-cancel": "Cancel"
 }
