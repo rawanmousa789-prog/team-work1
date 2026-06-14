@@ -79,6 +79,7 @@
     "acount-check":"Don't have an account? ",
     "acount-create": "Sign up",
 
+    "create account":"Register Page",
     "already-have-account":"I already have an account? ",
     "login-link" :"Sign In",
     "register-title":"Sign Up",
@@ -91,6 +92,13 @@
     "referral-code":"Referral Code (Optional)",
     "policy-text":"Yes, I understand and agree to the Terms of Service and Privacy Policy",
     "submit-btn":"Submit",
+    "account-type": "Account Type *",
+    "type-freelancer": "Freelancer",
+    "type-client": "Business Owner",
+    "skills-title": "Select your skills",
+    "agency-info-title": "Agency / Company Information",
+    "agency-name": "Agency Name *",
+    "employees-count": "Number of Employees *",
 
     "otp-title":"Coniform Email",
     "otp-subtitle":"A 6-digit verification code has been sent to your email. Please enter it below.",

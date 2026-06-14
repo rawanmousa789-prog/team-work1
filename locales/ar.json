@@ -79,6 +79,7 @@
     "acount-check":"ليس لديك حساب؟ ",
     "acount-create": "إنشاء حساب",
 
+    "create account":"انشاء حساب جديد",
     "already-have-account":"هل لديك حساب بالفعل؟",
     "login-link" :"تسجيل الدخول",
     "register-title":"إنشاء حساب",
@@ -91,6 +92,14 @@
     "referral-code":"رمز الإحالة (اختياري)",
     "policy-text":"نعم، أنا أفهم وأوافق على شروط الخدمة وسياسة الخصوصية",
     "submit-btn":"إرسال",
+    "account-type": "نوع الحساب *",
+    "type-freelancer": "مستقل",
+    "type-client": "صاحب عمل",
+    "skills-title": "اختر مهاراتك",
+    "agency-info-title": "معلومات الوكالة / الشركة",
+    "agency-name": "اسم الوكالة *",
+    "employees-count": "عدد الموظفين *",
+
 
     "otp-title":"تأكيد البريد الإلكتروني",
     "otp-subtitle":"تم إرسال رمز تحقق مكون من 6 أرقام إلى بريدك الإلكتروني. الرجاء إدخاله أدناه.",

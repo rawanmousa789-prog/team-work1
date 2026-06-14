@@ -34,3 +34,33 @@ if (registerForm) {
         window.location.href = "otp.html";
     });
 }
+
+document.getElementById('accountTypeSelect').addEventListener('change', function() {
+    const freelancerSection = document.getElementById('freelancer-content');
+    const clientSection = document.getElementById('client-content');
+    
+    const agencyName = document.getElementById('agencyNameInput');
+    const employeesCount = document.getElementById('employeesCountInput');
+
+    if (this.value === 'freelancer') {
+        freelancerSection.style.display = 'block';
+        clientSection.style.display = 'none';
+        
+        agencyName.removeAttribute('required');
+        employeesCount.removeAttribute('required');
+        agencyName.value = '';
+        employeesCount.value = '';
+    } else if (this.value === 'client') {
+        clientSection.style.display = 'block';
+        freelancerSection.style.display = 'none';
+        
+        agencyName.setAttribute('required', 'required');
+        employeesCount.setAttribute('required', 'required');
+        
+        const skillsCheckboxes = freelancerSection.querySelectorAll('input[type="checkbox"]');
+        skillsCheckboxes.forEach(cb => cb.checked = false);
+    } else {
+        freelancerSection.style.display = 'none';
+        clientSection.style.display = 'none';
+    }
+});

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Page</title>
+    <title data-i18n="create account">انشاء حساب جديد</title>
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
-    <header class="container-fluid  login-header">
+    <header class="container-fluid login-header">
         <a href="index.html" class="back-arrow">
             <i class="fa fa-long-arrow-right" style="color: #8205f7;" aria-hidden="true"></i>
         </a>
@@ -25,20 +25,95 @@
                 <div class="register-cover">
                     <img src="images/register-cover.svg" class="img-responsive center-block" alt="Register Cover">
                     <div class="text-center text-muted login-redirect">
-                            <span data-i18n="already-have-account">هل لديك حساب بالفعل؟</span> 
-                            <a href="login.html" class="text-purple fw-bold" data-i18n="login-link">تسجيل الدخول</a>
-                        </div>
+                        <span data-i18n="already-have-account">هل لديك حساب بالفعل؟</span> 
+                        <a href="login.html" class="text-purple fw-bold" data-i18n="login-link">تسجيل الدخول</a>
+                    </div>
                 </div>
             </div>
             
             <div class="col-md-6 col-sm-10 col-xs-12 form-side">
-                <div class="register-container">
-                    
+                <div class="register-container"> 
                     <h2 class="register-title" data-i18n="register-title">إنشاء حساب</h2>
                     <p class="register-subtitle text-muted" data-i18n="register-subtitle">للاستفادة من منصتنا، يرجى التسجيل</p>
-                    
-                    <form>
-                        <div class="row name-row">
+                    <form id="registerForm">
+                        <div class="floating-group is-select">
+                            <select class="floating-control" id="accountTypeSelect" required>
+                                <option value="" disabled selected hidden></option>
+                                <option value="freelancer" data-i18n="type-freelancer">مستقل</option>
+                                <option value="client" data-i18n="type-client">صاحب عمل</option>
+                            </select>
+                            <label data-i18n="account-type">نوع الحساب *</label>
+                        </div>
+
+                        <div id="freelancer-content" class="dynamic-section" style="display: none;">
+                            <div class="skills-container" style="border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; background: #ffffff; margin-top: 20px;">
+                                <h4 style="font-size: 14px; font-weight: bold; color: #1e293b; margin-top: 0; margin-bottom: 15px;" data-i18n="skills-title">اختر مهاراتك</h4>
+                                <div class="skills-grid" style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                    <label class="skill-chip">
+                                        <input type="checkbox" value="html">
+                                        <span>HTML5</span>
+                                    </label>
+                                    <label class="skill-chip">
+                                        <input type="checkbox" value="css">
+                                        <span>CSS3</span>
+                                    </label>
+                                    <label class="skill-chip">
+                                        <input type="checkbox" value="javascript">
+                                        <span>JavaScript</span>
+                                    </label>
+                                    <label class="skill-chip">
+                                        <input type="checkbox" value="react">
+                                        <span>React</span>
+                                    </label>
+                                    <label class="skill-chip">
+                                        <input type="checkbox" value="flutter">
+                                        <span>Flutter</span>
+                                    </label>
+                                    <label class="skill-chip">
+                                        <input type="checkbox" value="ui-ux">
+                                        <span>UI/UX Design</span>
+                                    </label>
+                                    <label class="skill-chip">
+                                        <input type="checkbox" value="laravel">
+                                        <span>Laravel</span>
+                                    </label>
+                                    <label class="skill-chip">
+                                        <input type="checkbox" value="python">
+                                        <span>Python</span>
+                                    </label>
+                                    <label class="skill-chip">
+                                        <input type="checkbox" value="node">
+                                        <span>Node.js</span>
+                                    </label>
+                                    <label class="skill-chip">
+                                        <input type="checkbox" value="graphic">
+                                        <span>Graphic Design</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="client-content" class="dynamic-section" style="display: none;">
+                            <div style="border: 1px solid #f3e8ff; border-radius: 12px; padding: 25px; background: #ffffff; margin-top: 20px; box-shadow: 0 2px 8px rgba(130, 5, 247, 0.04);">
+                                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; color: #8205f7;">
+                                    <i class="fa fa-building" style="font-size: 16px;"></i>
+                                    <h4 style="font-size: 15px; font-weight: bold; margin: 0;" data-i18n="agency-info-title">معلومات الوكالة / الشركة</h4>
+                                </div>
+                                
+                                <div class="floating-group" style="margin-bottom: 20px;">
+                                    <input type="text" id="agencyNameInput" class="floating-control" placeholder=" ">
+                                    <label data-i18n="agency-name">اسم الوكالة *</label>
+                                </div>
+
+                                <div class="floating-group has-icon">
+                                    <input type="number" id="employeesCountInput" class="floating-control" placeholder=" ">
+                                    <label data-i18n="employees-count">عدد الموظفين *</label>
+                                    <span class="toggle-icon" style="left: 15px; right: auto; pointer-events: none;"><i class="fa fa-users" style="color: #cbd5e1;"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row name-row" style="margin-top: 20px;">
                             <div class="col-xs-6">
                                 <div class="floating-group">
                                     <input type="text" class="floating-control" placeholder=" " required>
@@ -93,7 +168,7 @@
                         <div class="checkbox policy-checkbox">
                             <label>
                                 <input type="checkbox" required> 
-                                <span class="policy-text" data-i18n="policy-text">نعم، أنا أفهم وأوافق على <a href="#" class="text-purple">شروط الخدمة</a> <a href="#" class="text-purple">و سياسة الخصوصية</a></span>
+                                <span class="policy-text" data-i18n="policy-text">نعم، أنا أفهم وأوافق على <a href="#" class="text-purple">شروط الخدمة</a> و <a href="#" class="text-purple">سياسة الخصوصية</a></span>
                             </label>
                         </div>
 
@@ -103,6 +178,7 @@
             </div>
         </div>
     </div>
+
 
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
