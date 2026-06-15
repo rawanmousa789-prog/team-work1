@@ -815,3 +815,114 @@ window.onclick = function(event) {
         closeLogoutModal();
     }
 }
+//add services to profile panel
+window.addEventListener('DOMContentLoaded', () => {
+    const mainTab = localStorage.getItem('dashboard_active_tab');
+    if (mainTab === 'profile') {
+        if (typeof switchDashboardMainTab === 'function') {
+            switchDashboardMainTab('profile-section');
+        } else {
+            document.querySelectorAll('.dashboard-view-panel').forEach(p => p.style.display = 'none');
+            const profilePanel = document.getElementById('panel-profile');
+            if (profilePanel) profilePanel.style.display = 'block';
+        }
+        localStorage.removeItem('dashboard_active_tab');
+    }
+
+    const savedServiceTab = localStorage.getItem('active_service_tab') || 'onetime';
+    const targetButton = savedServiceTab === 'parttime' 
+        ? document.querySelector("button[onclick*='parttime']") 
+        : document.getElementById('default-service-tab');
+        
+    switchServiceTab(savedServiceTab, targetButton);
+});
+
+function switchServiceTab(tabType, element) {
+    localStorage.setItem('active_service_tab', tabType);
+
+    if (element && element.parentElement) {
+        element.parentElement.querySelectorAll('.service-tab-btn').forEach(btn => {
+            btn.style.backgroundColor = '#f1f5f9';
+            btn.style.color = '#475569';
+            btn.classList.remove('active-tab');
+        });
+        element.style.backgroundColor = '#8205f7';
+        element.style.color = '#fff';
+        element.classList.add('active-tab');
+    }
+
+    renderUserServices();
+}
+
+function renderUserServices() {
+    const currentTab = localStorage.getItem('active_service_tab') || 'onetime';
+    const container = document.getElementById('services-dynamic-content');
+    if (!container) return;
+
+    container.style.margin = '0';
+    container.style.padding = '0';
+
+    const servicesList = JSON.parse(localStorage.getItem('my_services')) || [];
+    const filteredServices = servicesList.filter(item => {
+        if (currentTab === 'onetime' && item.type === 'once') return true;
+        if (currentTab === 'parttime' && item.type === 'part-time') return true;
+        return item.type === currentTab;
+    });
+
+    if (filteredServices.length === 0) {
+        container.style.margin = 'auto';
+        container.style.padding = '35px 0';
+        container.innerHTML = `
+            <div class="no-services-trigger text-center">
+                <p class="text-muted" data-i18n="profile-empty-services">لا توجد خدمات متاحة مضافة</p>
+                <a href="add-request.html?type=${currentTab === 'parttime' ? 'part-time' : 'once'}" style="color: #8205f7; font-weight: bold; text-decoration: underline;">إضافة خدمة</a>
+            </div>
+        `;
+        return;
+    }
+
+    container.innerHTML = `
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; width: 100%; text-align: right; margin-top: 15px;">
+            ${filteredServices.map(service => `
+                <div class="service-card-item" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s;">
+                    <div style="position: relative; height: 140px; background: #f8fafc;">
+                        <img src="${service.image}" alt="Service" style="width: 100%; height: 100%; object-fit: cover;">
+                        <button style="position: absolute; top: 10px; right: 10px; background: #ffffff; border: none; border-radius: 50%; width: 28px; height: 28px; color: #8205f7; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa fa-pencil"></i></button>
+                    </div>
+                    <div style="padding: 15px; position: relative;">
+                        <h4 style="font-size: 13px; font-weight: bold; color: #1e293b; line-height: 1.5; margin-bottom: 8px; height: 38px; overflow: hidden;">${service.title}</h4>
+                        
+                        <div style="display: flex; gap: 5px; font-size: 11px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa fa-star" style="color: #ffb547;"></i> <span>0.0 (0)</span>
+                        </div>
+                        
+                        <div style="margin-bottom: 12px;">
+                            <span style="font-size: 10px; color: #64748b; display: block;">ابتداءً من</span>
+                            <span style="font-size: 16px; font-weight: 800; color: #0f172a;">$${service.price}</span>
+                        </div>
+                        
+                        <div style="display: flex; gap: 6px;">
+                            <div style="flex: 1; background: #f1f5f9; border-radius: 6px; padding: 5px 2px; font-size: 10px; color: #475569; text-align: center;"><span>${service.days} أيام</span></div>
+                            <div style="flex: 1; background: #f1f5f9; border-radius: 6px; padding: 5px 2px; font-size: 10px; color: #475569; text-align: center;"><span>${service.revisions} تعديل</span></div>
+                            <div style="flex: 1; background: #f1f5f9; border-radius: 6px; padding: 5px 2px; font-size: 10px; color: #475569; text-align: center;"><span>${service.features} ميزات</span></div>
+                        </div>
+                        
+                        <button onclick="deleteServiceFromProfile(${service.id})" style="position: absolute; bottom: 52px; left: 15px; background: none; border: none; color: #ef4444; cursor: pointer; font-size: 14px;">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+    `;
+}
+
+function deleteServiceFromProfile(id) {
+    if (confirm('هل أنت متأكد من حذف هذه الخدمة؟')) {
+        let servicesList = JSON.parse(localStorage.getItem('my_services')) || [];
+        servicesList = servicesList.filter(item => item.id !== id);
+        localStorage.setItem('my_services', JSON.stringify(servicesList));
+        renderUserServices();
+    }
+}
+

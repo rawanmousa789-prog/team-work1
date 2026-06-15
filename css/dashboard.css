@@ -648,7 +648,10 @@ html[dir="ltr"] .close {
     align-items: center;
     z-index: 9999;
 }
-
+.services-tags .tag-btn.neutral {
+    background-color: #f5f5f5;
+    color: #333333;
+}
 .custom-modal-box {
     background: #ffffff;
     padding: 30px;

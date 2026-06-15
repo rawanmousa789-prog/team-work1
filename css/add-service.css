@@ -1,0 +1,285 @@
+body.bg-light {
+    background-color: #f8fafc;
+    font-family: sans-serif;
+}
+.add-request-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.form-main-full-width {
+    width: 100%;
+}
+.card-form-body {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 35px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+.form-section-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0f172a;
+    text-align: start;
+}
+.form-field-group {
+    margin-bottom: 25px;
+}
+.form-label-title {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1e293b;
+    margin-bottom: 2px;
+    text-align: start;
+}
+.form-label-sub {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 8px;
+    text-align: start;
+}
+.form-control-custom, .form-select-custom {
+    width: 100%;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 14px;
+    outline: none;
+    background-color: #ffffff;
+    text-align: start;
+    transition: all 0.2s ease;
+}
+.form-control-custom:focus, .form-select-custom:focus {
+    border-color: #8205f7;
+    box-shadow: 0 0 0 3px rgba(130, 5, 247, 0.08);
+}
+.field-hint-text {
+    font-size: 11px;
+    margin-top: 6px;
+    text-align: start;
+}
+.stepper-wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 35px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+.stepper-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    right: 50px;
+    height: 2px;
+    background-color: #e2e8f0;
+    z-index: 1;
+}
+.stepper-item {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+.step-counter {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid #cbd5e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #64748b;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+.step-name {
+    font-size: 12px;
+    color: #64748b;
+}
+.stepper-item.active .step-counter {
+    background: #ffffff;
+    border-color: #8205f7;
+    color: #8205f7;
+}
+.stepper-item.active .step-name {
+    color: #8205f7;
+    font-weight: bold;
+}
+.form-actions-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 35px;
+}
+.btn-save-continue {
+    background-image: linear-gradient(90deg, #4924DF, #8205f7);
+    color: #ffffff !important;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 35px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(130, 5, 247, 0.2);
+}
+.btn-save-continue:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(130, 5, 247, 0.3);
+}
+.btn-save-continue:active {
+    transform: translateY(1px);
+}
+.step-content {
+    display: none;
+}
+.step-content.active-panel {
+    display: block;
+    animation: fadeInStep 0.35s ease-in-out;
+}
+.stepper-item {
+    cursor: pointer;
+}
+.stepper-item.completed .step-counter {
+    background-color: #8205f7;
+    border-color: #8205f7;
+    color: #ffffff;
+}
+.stepper-item.completed .step-name {
+    color: #8205f7;
+    font-weight: 500;
+}
+@keyframes fadeInStep {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.upload-boxes-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.upload-drop-zone {
+    flex: 1;
+    min-width: 250px;
+    height: 180px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+.upload-drop-zone:hover, .upload-drop-zone.dragover {
+    border-color: #8205f7;
+    background-color: #fcf9ff;
+}
+.upload-zone-content {
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.upload-icon {
+    font-size: 24px;
+    color: #94a3b8;
+    margin-bottom: 12px;
+}
+.upload-drop-zone:hover .upload-icon {
+    color: #8205f7;
+}
+.upload-text {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+.browse-link {
+    color: #8205f7;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.preview-element {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.preview-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.delete-preview-btn {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: rgba(220, 53, 69, 0.9);
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.2s, transform 0.2s;
+}
+.delete-preview-btn:hover {
+    background-color: #bb2d3b;
+    transform: scale(1.1);
+}
+.submit-success-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+}
+.submit-vector-container {
+    max-width: 380px;
+    width: 100%;
+}
+.success-vector-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.submit-main-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0f172a;
+}
+.submit-sub-title {
+    font-size: 14px;
+    color: #475569;
+}
+@media (max-width: 576px) {
+    .submit-vector-container {
+        max-width: 280px;
+    }
+    .submit-main-title {
+        font-size: 18px;
+    }
+}

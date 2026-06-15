@@ -1,0 +1,255 @@
+<!DOCTYPE html5>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="add-request-title">اضافة خدمة جديدة</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/cario.css">
+    <link rel="stylesheet" href="css/add-service.css">
+</head>
+<body class="bg-light">
+
+    <input type="hidden" id="service-type-storage" value="once">
+    <a href="dashboard.html" class="back-arrow" style="position: absolute; right: 30px; top: 25px;">
+        <i class="fa fa-long-arrow-right" style="color: #8205f7; font-size: 20px;" aria-hidden="true"></i>
+    </a>
+    
+
+    <div class="container add-request-container my-5">
+        
+        <div class="stepper-wrapper mb-5">
+            <div class="stepper-item active" id="step-tab-1" onclick="navigateToStep(1)">
+                <div class="step-counter" id="step-icon-1"><i class="fa-solid fa-pen"></i></div>
+                <div class="step-name" data-i18n="step-overview">نظرة عامة</div>
+            </div>
+            <div class="stepper-item" id="step-tab-2" onclick="navigateToStep(2)">
+                <div class="step-counter" id="step-icon-2">2</div>
+                <div class="step-name" data-i18n="step-pricing">التسعير</div>
+            </div>
+            <div class="stepper-item" id="step-tab-3" onclick="navigateToStep(3)">
+                <div class="step-counter" id="step-icon-3">3</div>
+                <div class="step-name" data-i18n="step-description">الوصف</div>
+            </div>
+            <div class="stepper-item" id="step-tab-4" onclick="navigateToStep(4)">
+                <div class="step-counter" id="step-icon-4">4</div>
+                <div class="step-name" data-i18n="step-gallery">المعرض</div>
+            </div>
+            <div class="stepper-item" id="step-tab-5" onclick="navigateToStep(5)">
+                <div class="step-counter" id="step-icon-5">5</div>
+                <div class="step-name" data-i18n="step-submit">إرسال</div>
+            </div>
+        </div>
+
+        <div class="form-main-full-width">
+            <div class="card-form-body">
+                
+                <div id="step-content-1" class="step-content active-panel">
+                    <h3 class="form-section-title mb-4" data-i18n="form-overview-title">نظرة عامة على الخدمة</h3>
+                    <form id="overviewForm" onsubmit="event.preventDefault(); navigateToStep(2);">
+                        <div class="form-field-group mb-4">
+                            <label class="form-label-title" data-i18n="field-title-label">العنوان</label>
+                            <span class="form-label-sub" data-i18n="field-title-sub">أخبر العميل بما ستقدمه وكيف يفيده ذلك</span>
+                            <textarea class="form-control-custom" rows="3" required></textarea>
+                            <div class="field-hint-text text-danger" data-i18n="field-title-hint">0/40 حرف - الحد الأدنى 3 أحرف مطلوب</div>
+                        </div>
+
+                        <div class="form-field-group mb-4">
+                            <label class="form-label-title" data-i18n="field-category-label">الفئة</label>
+                            <span class="form-label-sub" data-i18n="field-category-sub">اختر فئة لتسهيل العثور على خدمتك من قبل العملاء</span>
+                            <select class="form-select-custom" required>
+                                <option value="" disabled selected data-i18n="select-category-placeholder">اختر الفئة</option>
+                                <option value="design">تصميم جرافيك</option>
+                                <option value="development">برمجة وتطوير</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field-group mb-4">
+                            <label class="form-label-title" data-i18n="field-subcategory-label">اختر القسم الفرعي</label>
+                            <span class="form-label-sub" data-i18n="field-subcategory-sub">اختر قسماً فرعياً يناسب خدمتك.</span>
+                            <select class="form-select-custom" required>
+                                <option value="" disabled selected data-i18n="select-subcategory-placeholder">اختر القسم الفرعي</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field-group mb-4">
+                            <label class="form-label-title" data-i18n="field-skills-label">اختر المهارات (اختياري)</label>
+                            <span class="form-label-sub" data-i18n="field-skills-sub">اختر المهارات المرتبطة بخدمتك</span>
+                            <select class="form-select-custom">
+                                <option value="" disabled selected data-i18n="select-skills-placeholder">اختر المهارات المرتبطة بخدمتك</option>
+                            </select>
+                            <div class="field-hint-text text-muted" data-i18n="field-skills-hint">(بحد أقصى 5 مهارات)</div>
+                        </div>
+
+                        <div class="form-actions-wrapper">
+                            <button type="submit" class="btn-save-continue" data-i18n="btn-save-continue">حفظ والمتابعة</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="step-content-2" class="step-content">
+                    <h3 class="form-section-title mb-4" data-i18n="pricing-section-title">السعر والنطاق (الباقات)</h3>
+                    <form id="pricingForm" onsubmit="event.preventDefault(); alert('تم حفظ التسعير بنجاح!');">
+                        <div class="pricing-grid-layout">
+                            <div class="package-inputs-side">
+                                <div class="form-field-group mb-4 select-package-wrapper">
+                                    <label class="form-label-title" data-i18n="select-packages-count">اختر عدد الباقات:</label>
+                                    <select class="form-select-custom static-select-width">
+                                        <option value="1" data-i18n="one-package-option">باقة واحدة</option>
+                                        <option value="2" data-i18n="tow-package-option">باقتين</option>
+                                        <option value="3" data-i18n="three-packages-option">3 باقات</option>
+                                    </select>
+                                </div>
+
+                                <div class="package-details-card">
+                                    <h5 class="package-card-header" data-i18n="package-1-title">الباقة 1</h5>
+                                    <div class="form-field-group mb-3">
+                                        <label class="form-label-title" data-i18n="package-price-label">السعر (دولار أمريكي)</label>
+                                        <input type="number" class="form-control-custom" placeholder="0.00" min="5" step="0.01" required>
+                                    </div>
+                                    <div class="form-field-group mb-3">
+                                        <label class="form-label-title" data-i18n="delivery-time-label">مدة التسليم (أيام)</label>
+                                        <input type="text" class="form-control-custom" required>
+                                    </div>
+                                    <div class="form-field-group mb-3">
+                                        <label class="form-label-title" data-i18n="revisions-count-label">عدد المراجعات</label>
+                                        <select class="form-select-custom" required>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="unlimited" data-i18n="unlimited-revisions">غير محدود</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="package-features-side">
+                                <h5 class="package-card-header" data-i18n="service-includes-title">يشمل الخدمة</h5>
+                                <div class="features-checkbox-list d-flex" style="flex-direction: column; text-align: justify;">
+                                    <label class="feature-checkbox-item"><input type="checkbox" value="custom-bg"><span data-i18n="feat-custom-bg">خلفية مخصصة </span></label>
+                                    <label class="feature-checkbox-item"><input type="checkbox" value="db-integration"><span data-i18n="feat-db-integration">تكامل قاعدة البيانات</span></label>
+                                    <label class="feature-checkbox-item"><input type="checkbox" value="api-integration"><span data-i18n="feat-api-integration">تكامل API</span></label>
+                                    <label class="feature-checkbox-item"><input type="checkbox" value="security-opt"><span data-i18n="feat-security-opt">تحسينات الأمان</span></label>
+                                    <label class="feature-checkbox-item"><input type="checkbox" value="responsive-ui"><span data-i18n="feat-responsive-ui">واجهة مستخدم متجاوبة</span></label>
+                                    <label class="feature-checkbox-item"><input type="checkbox" value="control-panel"><span data-i18n="feat-control-panel">لوحة التحكم</span></label>
+                                    <label class="feature-checkbox-item"><input type="checkbox" value="code-comments"><span data-i18n="feat-code-comments">تعليقات على الكود</span></label>
+                                    <label class="feature-checkbox-item"><input type="checkbox" value="qa-testing"><span data-i18n="feat-qa-testing">الاختبار وضمان الجودة</span></label>
+                                    <label class="feature-checkbox-item"><input type="checkbox" value="documentation"><span data-i18n="feat-documentation">التوثيق</span></label>
+                                    <label class="feature-checkbox-item"><input type="checkbox" value="git-control"><span data-i18n="feat-git-control">التحكم بالإصدار (Git)</span></label>
+                                    <label class="feature-checkbox-item"><input type="checkbox" value="mobile-responsive"><span data-i18n="feat-mobile-responsive">متوافق مع الجوال</span></label>
+                                    <label class="feature-checkbox-item"><input type="checkbox" value="deployment-guide"><span data-i18n="feat-deployment-guide">دليل النشر</span></label>
+                                    <label class="feature-checkbox-item"><input type="checkbox" value="scalable-structure"><span data-i18n="feat-scalable-structure">بنية قابلة للتوسع</span></label>
+                                    <label class="feature-checkbox-item"><input type="checkbox" value="multi-lang"><span data-i18n="feat-multi-lang">دعم لغات متعددة</span></label>
+                                    <label class="feature-checkbox-item"><input type="checkbox" value="third-party"><span data-i18n="feat-third-party">تكامل مع طرف ثالث</span></label>
+                                    <label class="feature-checkbox-item"><input type="checkbox" value="cms-integration"><span data-i18n="feat-cms-integration">تكامل مع نظام إدارة المحتوى</span></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-navigation-actions d-flex" style="justify-content: space-between;">
+                            <button type="button" class="btn btn-step-back" onclick="navigateToStep(1)" data-i18n="btn-back-text">السابق</button>
+                            <button type="submit" class="btn-save-continue style-draft" data-i18n="btn-save-continue">حفظ والمتابعة</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="step-content-3" class="step-content">
+                    <h3 class="form-section-title mb-4" data-i18n="description-section-title">وصف الخدمة</h3>
+                    
+                    <form id="descriptionForm" onsubmit="event.preventDefault(); navigateToStep(4);">
+                        <div class="form-field-group mb-4">
+                            <label class="form-label-title" data-i18n="field-desc-label">وصف الخدمة</label>
+                            <span class="form-label-sub" data-i18n="field-desc-sub">صف باختصار ما الذي يميزك أنت وخدمتك</span>
+                            
+                            <textarea class="form-control-custom" rows="8" placeholder="أدخل وصفاً عن الخدمة" required></textarea>
+                            
+                            <div class="desc-counters-wrapper d-flex justify-content-between mt-2" style="display: flex; justify-content: space-between; direction: rtl;">
+                                <div class="field-hint-text text-muted">0 / 1200 <span data-i18n="char-unit">حرف</span></div>
+                                <div class="field-hint-text text-danger" style="color: #dc3545;"><i class="fa-solid fa-triangle-exclamation me-1"></i> <span data-i18n="min-char-warning">الحد الأدنى 40 حرف</span></div>
+                            </div>
+                        </div>
+
+                        <div class="form-navigation-actions" style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #f1f5f9; padding-top: 20px;">
+                            <button type="button" class="btn btn-step-back" onclick="navigateToStep(2)" data-i18n="btn-back-text">السابق</button>
+                            <button type="submit" class="btn-save-continue" data-i18n="btn-save-continue">حفظ والمتابعة</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="step-content-4" class="step-content">
+                    <h3 class="form-section-title mb-4" data-i18n="gallery-section-title">تحميل معرض الخدمة</h3>
+                    
+                    <form id="galleryForm" onsubmit="event.preventDefault(); navigateToStep(5);">
+                        <div class="form-field-group mb-4">
+                            <label class="form-label-title" data-i18n="gallery-upload-label">تحميل المرفقات</label>
+                            <span class="form-label-sub" data-i18n="gallery-upload-sub">قم بتحميل حتى 3 مرفقات (صور أو فيديو)، الفيديو حتى 500 ميجابايت والصورة حتى 200 ميجابايت.</span>
+                            
+                            <div class="upload-boxes-container">
+                                
+                                <div class="upload-drop-zone" id="zone-1" onclick="triggerFileInput('file-input-1')" ondragover="event.preventDefault(); this.classList.add('dragover');" ondragleave="this.classList.remove('dragover');" ondrop="handleFileDrop(event, 'file-input-1', 'preview-1')">
+                                    <input type="file" id="file-input-1" accept="image/*,video/*" style="display: none;" onchange="handleFileSelect(this, 'preview-1')">
+                                    <div class="upload-zone-content" id="preview-1">
+                                        <i class="fa fa-upload"></i>
+                                        <p class="upload-text"><span data-i18n="drag-text">اسحب صورة أو فيديو هنا</span> <br> <span class="browse-link" data-i18n="browse-text">تصفح</span></p>
+                                    </div>
+                                </div>
+
+                                <div class="upload-drop-zone" id="zone-2" onclick="triggerFileInput('file-input-2')" ondragover="event.preventDefault(); this.classList.add('dragover');" ondragleave="this.classList.remove('dragover');" ondrop="handleFileDrop(event, 'file-input-2', 'preview-2')">
+                                    <input type="file" id="file-input-2" accept="image/*,video/*" style="display: none;" onchange="handleFileSelect(this, 'preview-2')">
+                                    <div class="upload-zone-content" id="preview-2">
+                                        <i class="fa fa-upload"></i>
+                                        <p class="upload-text"><span data-i18n="drag-text">اسحب صورة أو فيديو هنا</span> <br> <span class="browse-link" data-i18n="browse-text">تصفح</span></p>
+                                    </div>
+                                </div>
+
+                                <div class="upload-drop-zone" id="zone-3" onclick="triggerFileInput('file-input-3')" ondragover="event.preventDefault(); this.classList.add('dragover');" ondragleave="this.classList.remove('dragover');" ondrop="handleFileDrop(event, 'file-input-3', 'preview-3')">
+                                    <input type="file" id="file-input-3" accept="image/*,video/*" style="display: none;" onchange="handleFileSelect(this, 'preview-3')">
+                                    <div class="upload-zone-content" id="preview-3">
+                                        <i class="fa fa-upload"></i>
+                                        <p class="upload-text"><span data-i18n="drag-text">اسحب صورة أو فيديو هنا</span> <br> <span class="browse-link" data-i18n="browse-text">تصفح</span></p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-navigation-actions" style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #f1f5f9; padding-top: 20px;">
+                            <button type="button" class="btn btn-step-back" onclick="navigateToStep(3)" data-i18n="btn-back-text">السابق</button>
+                            <button type="submit" class="btn-save-continue" data-i18n="btn-save-continue">حفظ والمتابعة</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="step-content-5" class="step-content">
+                    <div class="submit-success-wrapper">
+                        
+                        <div class="submit-vector-container mb-4">
+                            <img src="images/service-submit.svg" alt="Success Illustration" class="success-vector-img">
+                        </div>
+
+                        <h3 class="submit-main-title mb-2" data-i18n="submit-success-title">لقد انتهيت الآن!</h3>
+                        <p class="submit-sub-title mb-5" data-i18n="submit-success-sub">خدمتك جاهزة للنشر—استعد للبدء بالبيع!</p>
+
+                        <div class="form-navigation-actions" style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #f1f5f9; padding-top: 20px; width: 100%;">
+                            <button type="button" class="btn btn-step-back" onclick="navigateToStep(4)" data-i18n="btn-back-text">السابق</button>
+                            <button type="button" class="btn-save-continue" onclick="handleFinalSubmit()" data-i18n="btn-save-service">إضافة الخدمات</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+
+    </div>
+    
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/add-service.js"></script>
+</body>
+</html>

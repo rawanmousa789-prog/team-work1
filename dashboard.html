@@ -893,11 +893,13 @@
                     <div class="sidebar-services-section">
                         <h4 data-i18n="services-header">الخدمات</h4>
                         <div class="services-tags" style="display: flex; justify-content: center;">
-                            <button class="tag-btn active" data-i18n="one-time-service">خدمة لمرة واحدة</button>
-                            <button class="tag-btn neutral" data-i18n="part-time-jobs">وظائف بدوام جزئي</button>
+                            <button id="btn-one-time" class="tag-btn active" data-i18n="one-time-service" onclick="toggleServices('one-time')">خدمة لمرة واحدة</button>
+                            <button id="btn-part-time" class="tag-btn neutral" data-i18n="part-time-jobs" onclick="toggleServices('part-time')">وظائف بدوام جزئي</button>
                         </div>
-                        <p class="text-muted" style="font-size: 12px; margin-top: 10px;" data-i18n="no-services-msg">لا توجد خدمات لمرة واحدة متاحة</p>
-                        <a href="#" style="color: #8205f7; font-size: 13px; font-weight: 600; text-decoration: none;" data-i18n="add-service-link">إضافة خدمة</a>
+                        
+                        <p id="services-status-text" class="text-muted" style="font-size: 12px; margin-top: 10px; text-align: center;" data-i18n="no-services-msg">لا توجد خدمات لمرة واحدة متاحة</p>
+                        
+                        <a href="add-service.html" style="color: #8205f7; font-size: 13px; font-weight: 600; text-decoration: none; text-align: center;" data-i18n="add-service-link">إضافة خدمة</a>
                     </div>
                     
                     <div class="help-box-card">
