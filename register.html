@@ -1,9 +1,9 @@
-<!DOCTYPE html5>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="create account">انشاء حساب جديد</title>
+    <title data-i18n="create-account">انشاء حساب جديد</title>
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -116,25 +116,25 @@
                         <div class="row name-row" style="margin-top: 20px;">
                             <div class="col-xs-6">
                                 <div class="floating-group">
-                                    <input type="text" class="floating-control" placeholder=" " required>
+                                    <input type="text" id="firstNameInput" class="floating-control" placeholder=" " required>
                                     <label data-i18n="first-name">الاسم الأول</label>
                                 </div>
                             </div>
                             <div class="col-xs-6">
                                 <div class="floating-group">
-                                    <input type="text" class="floating-control" placeholder=" " required>
+                                    <input type="text" id="lastNameInput" class="floating-control" placeholder=" " required>
                                     <label data-i18n="last-name">الاسم الأخير</label>
                                 </div>
                             </div>
                         </div>
 
                         <div class="floating-group">
-                            <input type="email" class="floating-control" placeholder=" " required>
+                            <input type="email" id="emailInput" class="floating-control" placeholder=" " required>
                             <label data-i18n="email">البريد الإلكتروني</label>
                         </div>
 
                         <div class="floating-group">
-                            <input type="date" class="floating-control" placeholder=" " required>
+                            <input type="date" id="birthDateInput" class="floating-control" placeholder=" " required>
                             <label data-i18n="birth-date">تاريخ الميلاد</label>
                         </div>
 

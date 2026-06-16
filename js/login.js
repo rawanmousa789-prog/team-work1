@@ -1,14 +1,17 @@
-var togglePassword = document.getElementById('togglePassword');
-var password = document.getElementById('password');
-
-togglePassword.addEventListener('click', function () {
-    var type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-    password.setAttribute('type', type);    
-    var icon = this.querySelector('i');
-    icon.classList.toggle('fa-eye');
-    icon.classList.toggle('fa-eye-slash');
-});
 document.addEventListener("DOMContentLoaded", function () {
+    var togglePassword = document.getElementById('togglePassword');
+    var password = document.getElementById('password');
+
+    if (togglePassword && password) {
+        togglePassword.addEventListener('click', function () {
+            var type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            var icon = this.querySelector('i');
+            icon.classList.toggle('fa-eye');
+            icon.classList.toggle('fa-eye-slash');
+        });
+    }
+
     const loginForm = document.getElementById("loginForm");
     if (loginForm) {
         loginForm.addEventListener("submit", function (event) {
@@ -19,10 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("يرجى ملء جميع الحقول المطلوبة!");
                 return;
             }
-            const loginData = {
-                email: emailInput,
-                password: passwordInput
-            };
+            const loginData = { email: emailInput, password: passwordInput };
             const apiUrl = "https://your-backend-domain.com/api/login";
             const submitBtn = loginForm.querySelector("button[type='submit']");
             const originalBtnText = submitBtn.innerHTML;
@@ -30,10 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
             submitBtn.disabled = true;
             fetch(apiUrl, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json"
-                },
+                headers: { "Content-Type": "application/json", "Accept": "application/json" },
                 body: JSON.stringify(loginData)
             })
             .then(response => response.json())
@@ -52,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 submitBtn.innerHTML = originalBtnText;
                 submitBtn.disabled = false;
                 console.error("Error during login:", error);
-                window.location.href = "dashboard.html";
+                alert("حدث خطأ في الاتصال، يرجى المحاولة مرة أخرى.");
             });
         });
     }

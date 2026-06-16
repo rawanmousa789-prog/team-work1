@@ -79,7 +79,6 @@
     "acount-check":"ليس لديك حساب؟ ",
     "acount-create": "إنشاء حساب",
 
-    "create account":"انشاء حساب جديد",
     "already-have-account":"هل لديك حساب بالفعل؟",
     "login-link" :"تسجيل الدخول",
     "register-title":"إنشاء حساب",
@@ -420,6 +419,8 @@
     "modal-certificate-year-select": "سنة الإصدار",
     "home-menu":"العودة الى الرئيسية",
 
+    "resend-link": "إعادة الإرسال",
+    "create-account": "انشاء حساب جديد",
     "menu-settings": "الإعدادات",
     "menu-logout": "تسجيل الخروج",
     "setting-title":"الإعدادات",

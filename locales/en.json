@@ -79,7 +79,8 @@
     "acount-check":"Don't have an account? ",
     "acount-create": "Sign up",
 
-    "create account":"Register Page",
+    "resend-link": "Resend Code",
+    "create-account": "Create New Account",
     "already-have-account":"I already have an account? ",
     "login-link" :"Sign In",
     "register-title":"Sign Up",
